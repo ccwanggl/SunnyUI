@@ -1,7 +1,7 @@
-/******************************************************************************
- * SunnyUI ¿ªÔ´¿Ø¼ş¿â¡¢¹¤¾ßÀà¿â¡¢À©Õ¹Àà¿â¡¢¶àÒ³Ãæ¿ª·¢¿ò¼Ü¡£
- * CopyRight (C) 2012-2025 ShenYongHua(ÉòÓÀ»ª).
- * QQÈº£º56829229 QQ£º17612584 EMail£ºSunnyUI@QQ.Com
+ï»¿/******************************************************************************
+ * SunnyUI å¼€æºæ§ä»¶åº“ã€å·¥å…·ç±»åº“ã€æ‰©å±•ç±»åº“ã€å¤šé¡µé¢å¼€å‘æ¡†æ¶ã€‚
+ * CopyRight (C) 2012-2026 ShenYongHua(æ²ˆæ°¸å).
+ * QQç¾¤ï¼š56829229 QQï¼š17612584 EMailï¼šSunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,21 +9,21 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * Èç¹ûÄúÊ¹ÓÃ´Ë´úÂë£¬Çë±£Áô´ËËµÃ÷¡£
+ * å¦‚æœæ‚¨ä½¿ç”¨æ­¤ä»£ç ï¼Œè¯·ä¿ç•™æ­¤è¯´æ˜ã€‚
  ******************************************************************************
- * ÎÄ¼şÃû³Æ: UFontImage.cs
- * ÎÄ¼şËµÃ÷: ×ÖÌåÍ¼Æ¬°ïÖúÀà
- * µ±Ç°°æ±¾: V3.1
- * ´´½¨ÈÕÆÚ: 2020-01-01
+ * æ–‡ä»¶åç§°: UFontImage.cs
+ * æ–‡ä»¶è¯´æ˜: å­—ä½“å›¾ç‰‡å¸®åŠ©ç±»
+ * å½“å‰ç‰ˆæœ¬: V3.1
+ * åˆ›å»ºæ—¥æœŸ: 2020-01-01
  *
- * 2020-01-01: V2.2.0 Ôö¼ÓÎÄ¼şËµÃ÷
- * 2020-05-21: V2.2.5 µ÷Õû´Ó×ÊÔ´ÎÄ¼şÖĞ¼ÓÔØ×ÖÌå£¬²»ÓÃÁí´æÎªÎÄ¼ş¡£
- *                    ¸ĞĞ»£ºÂó¿Ç±ı https://gitee.com/maikebing
- * 2021-06-15: V3.0.4 Ôö¼ÓFontAwesomeV5µÄ×ÖÌåÍ¼±ê£¬ÖØ¹¹´úÂë
- * 2021-06-15: V3.3.5 Ôö¼ÓFontAwesomeV6µÄ×ÖÌåÍ¼±ê£¬ÖØ¹¹´úÂë
- * 2023-05-16: V3.3.6 ÖØ¹¹DrawFontImageº¯Êı
- * 2022-05-17: V3.3.7 ĞŞ¸´ÁËÒ»¸ö´°ÌåÊôĞÔ±à¼­Æ÷Í¼±êÏÔÊ¾²»È«µÄÎÊÌâ
- * 2023-10-25: V3.5.1 MaterialIcons×ÖÌåÍ¼±êµ÷´ó3¸öÏñËØ
+ * 2020-01-01: V2.2.0 å¢åŠ æ–‡ä»¶è¯´æ˜
+ * 2020-05-21: V2.2.5 è°ƒæ•´ä»èµ„æºæ–‡ä»¶ä¸­åŠ è½½å­—ä½“ï¼Œä¸ç”¨å¦å­˜ä¸ºæ–‡ä»¶ã€‚
+ *                    æ„Ÿè°¢ï¼šéº¦å£³é¥¼ https://gitee.com/maikebing
+ * 2021-06-15: V3.0.4 å¢åŠ FontAwesomeV5çš„å­—ä½“å›¾æ ‡ï¼Œé‡æ„ä»£ç 
+ * 2021-06-15: V3.3.5 å¢åŠ FontAwesomeV6çš„å­—ä½“å›¾æ ‡ï¼Œé‡æ„ä»£ç 
+ * 2023-05-16: V3.3.6 é‡æ„DrawFontImageå‡½æ•°
+ * 2022-05-17: V3.3.7 ä¿®å¤äº†ä¸€ä¸ªçª—ä½“å±æ€§ç¼–è¾‘å™¨å›¾æ ‡æ˜¾ç¤ºä¸å…¨çš„é—®é¢˜
+ * 2023-10-25: V3.5.1 MaterialIconså­—ä½“å›¾æ ‡è°ƒå¤§3ä¸ªåƒç´ 
 ******************************************************************************/
 
 using System.Collections.Generic;
@@ -35,14 +35,14 @@ using System.IO;
 namespace Sunny.UI
 {
     /// <summary>
-    /// ×ÖÌåÍ¼Æ¬°ïÖúÀà
+    /// å­—ä½“å›¾ç‰‡å¸®åŠ©ç±»
     /// </summary>
     public static class FontImageHelper
     {
         public static readonly Dictionary<UISymbolType, FontImages> Fonts = new Dictionary<UISymbolType, FontImages>();
 
         /// <summary>
-        /// ¹¹Ôìº¯Êı
+        /// æ„é€ å‡½æ•°
         /// </summary>
         static FontImageHelper()
         {
@@ -69,12 +69,12 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// »ñÈ¡×ÖÌå´óĞ¡
+        /// è·å–å­—ä½“å¤§å°
         /// </summary>
-        /// <param name="graphics">GDI»æÍ¼</param>
-        /// <param name="symbol">×Ö·û</param>
-        /// <param name="symbolSize">´óĞ¡</param>
-        /// <returns>×ÖÌå´óĞ¡</returns>
+        /// <param name="graphics">GDIç»˜å›¾</param>
+        /// <param name="symbol">å­—ç¬¦</param>
+        /// <param name="symbolSize">å¤§å°</param>
+        /// <returns>å­—ä½“å¤§å°</returns>
         internal static SizeF GetFontImageSize(this Graphics graphics, int symbol, int symbolSize)
         {
             Font font = GetFont(symbol, symbolSize);
@@ -97,15 +97,15 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// »æÖÆ×ÖÌåÍ¼Æ¬
+        /// ç»˜åˆ¶å­—ä½“å›¾ç‰‡
         /// </summary>
-        /// <param name="graphics">GDI»æÍ¼</param>
-        /// <param name="symbol">×Ö·û</param>
-        /// <param name="symbolSize">´óĞ¡</param>
-        /// <param name="color">ÑÕÉ«</param>
-        /// <param name="rect">ÇøÓò</param>
-        /// <param name="xOffset">×óÓÒÆ«ÒÆ</param>
-        /// <param name="yOffSet">ÉÏÏÂÆ«ÒÆ</param>
+        /// <param name="graphics">GDIç»˜å›¾</param>
+        /// <param name="symbol">å­—ç¬¦</param>
+        /// <param name="symbolSize">å¤§å°</param>
+        /// <param name="color">é¢œè‰²</param>
+        /// <param name="rect">åŒºåŸŸ</param>
+        /// <param name="xOffset">å·¦å³åç§»</param>
+        /// <param name="yOffSet">ä¸Šä¸‹åç§»</param>
         public static void DrawFontImage(this Graphics graphics, int symbol, int symbolSize, Color color,
             RectangleF rect, int xOffset = 0, int yOffSet = 0, int angle = 0)
         {
@@ -114,11 +114,11 @@ namespace Sunny.UI
             float top = rect.Top + ((rect.Height - sf.Height) / 2.0f).RoundEx();
             //graphics.DrawFontImage(symbol, symbolSize, color, left, top + 1, xOffset, yOffSet);
 
-            // °Ñ»­°åµÄÔ­µã(Ä¬ÈÏÊÇ×óÉÏ½Ç)¶¨Î»ÒÆµ½ÎÄ×ÖÖĞĞÄ
+            // æŠŠç”»æ¿çš„åŸç‚¹(é»˜è®¤æ˜¯å·¦ä¸Šè§’)å®šä½ç§»åˆ°æ–‡å­—ä¸­å¿ƒ
             graphics.TranslateTransform(left + sf.Width / 2, top + sf.Height / 2);
-            // Ğı×ª»­°å
+            // æ—‹è½¬ç”»æ¿
             graphics.RotateTransform(angle);
-            // »ØÍË»­°åx,yÖáÒÆ¶¯¹ıµÄ¾àÀë
+            // å›é€€ç”»æ¿x,yè½´ç§»åŠ¨è¿‡çš„è·ç¦»
             graphics.TranslateTransform(-(left + sf.Width / 2), -(top + sf.Height / 2));
 
             graphics.DrawFontImage(symbol, symbolSize, color, left, top, xOffset, yOffSet);
@@ -129,16 +129,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// »æÖÆ×ÖÌåÍ¼Æ¬
+        /// ç»˜åˆ¶å­—ä½“å›¾ç‰‡
         /// </summary>
-        /// <param name="graphics">GDI»æÍ¼</param>
-        /// <param name="symbol">×Ö·û</param>
-        /// <param name="symbolSize">´óĞ¡</param>
-        /// <param name="color">ÑÕÉ«</param>
-        /// <param name="left">×ó</param>
-        /// <param name="top">ÉÏ</param>
-        /// <param name="xOffset">×óÓÒÆ«ÒÆ</param>
-        /// <param name="yOffSet">ÉÏÏÂÆ«ÒÆ</param>
+        /// <param name="graphics">GDIç»˜å›¾</param>
+        /// <param name="symbol">å­—ç¬¦</param>
+        /// <param name="symbolSize">å¤§å°</param>
+        /// <param name="color">é¢œè‰²</param>
+        /// <param name="left">å·¦</param>
+        /// <param name="top">ä¸Š</param>
+        /// <param name="xOffset">å·¦å³åç§»</param>
+        /// <param name="yOffSet">ä¸Šä¸‹åç§»</param>
         private static void DrawFontImage(this Graphics graphics, int symbol, int symbolSize, Color color,
             float left, float top, int xOffset = 0, int yOffSet = 0)
         {
@@ -155,12 +155,12 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ´´½¨Í¼Æ¬
+        /// åˆ›å»ºå›¾ç‰‡
         /// </summary>
-        /// <param name="symbol">×Ö·û</param>
-        /// <param name="size">´óĞ¡</param>
-        /// <param name="color">ÑÕÉ«</param>
-        /// <returns>Í¼Æ¬</returns>
+        /// <param name="symbol">å­—ç¬¦</param>
+        /// <param name="size">å¤§å°</param>
+        /// <param name="color">é¢œè‰²</param>
+        /// <returns>å›¾ç‰‡</returns>
         public static Image CreateImage(int symbol, int size, Color color)
         {
             Bitmap image = new Bitmap(size, size);
@@ -171,11 +171,11 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// »ñÈ¡×ÖÌå
+        /// è·å–å­—ä½“
         /// </summary>
-        /// <param name="symbol">×Ö·û</param>
-        /// <param name="imageSize">´óĞ¡</param>
-        /// <returns>×ÖÌå</returns>
+        /// <param name="symbol">å­—ç¬¦</param>
+        /// <param name="imageSize">å¤§å°</param>
+        /// <returns>å­—ä½“</returns>
         public static Font GetFont(int symbol, int imageSize)
         {
             var symbolType = GetSymbolType(symbol);
