@@ -17,6 +17,7 @@
  * 创建日期: 2020-01-01
  *
  * 2020-01-01: V3.8.3 增加文件说明
+ * 2026-02-25: V3.9.2 增加刻度值小数位数自适应
 ******************************************************************************/
 
 using System;
@@ -49,11 +50,11 @@ public class UIMeter : UIUserControl
     //----------------范围---------------------
 
     private float _minValue;
-    [Description("最小值")]
+    [Description("最小值"), DefaultValue(0)]
     public float MinValue { get => _minValue; set { _minValue = value; Invalidate(); } }
 
     private float _maxValue = 100;
-    [Description("最大值")]
+    [Description("最大值"), DefaultValue(100)]
     public float MaxValue { get => _maxValue; set { _maxValue = value; Invalidate(); } }
 
     //---------------阈值及颜色-----------------
@@ -67,25 +68,25 @@ public class UIMeter : UIUserControl
     public Color NeedleColor { get => _needleColor; set { _needleColor = value; Invalidate(); } }
 
     private int _needleInner = 4;
-    [Description("指针圆圈内径")]
+    [Description("指针圆圈内径"), DefaultValue(4)]
     public int NeedleInner { get => _needleInner; set { _needleInner = Math.Max(0, value); Invalidate(); } }
 
     private int _needleOuter = 16;
-    [Description("指针圆圈外径")]
+    [Description("指针圆圈外径"), DefaultValue(16)]
     public int NeedleOuter { get => _needleOuter; set { _needleOuter = Math.Max(4, value); Invalidate(); } }
 
     private int _needleLength = 60;
-    [Description("指针圆圈长度")]
+    [Description("指针圆圈长度"), DefaultValue(60)]
     public int NeedleLength { get => _needleLength; set { _needleLength = Math.Max(10, value); Invalidate(); } }
 
     //----------数值--------------
     private float _thisValue;
-    [Description("当前数值")]
+    [Description("当前数值"), DefaultValue(0)]
     public float Value { get => _thisValue; set { _thisValue = Math.Min(MaxValue, Math.Max(MinValue, value)); Invalidate(); } }
 
-    private int _valueDecimalPlaces = 2;
-    [Description("数值小数位数")]
-    public int ValueDecimalPlaces { get => _valueDecimalPlaces; set { _valueDecimalPlaces = Math.Max(0, value); Invalidate(); } }
+    private int _valueDecimalPlaces = -1;
+    [Description("数值小数位数"), DefaultValue(-1)]
+    public int ValueDecimalPlaces { get => _valueDecimalPlaces; set { _valueDecimalPlaces = Math.Max(-1, value); Invalidate(); } }
 
     //-----------刻度--------------
     private Font _scaleFont = new("宋体", 10.5f);
@@ -93,39 +94,39 @@ public class UIMeter : UIUserControl
     public Font ScaleFont { get => _scaleFont; set { _scaleFont = value; Invalidate(); } }
 
     private int _scaleDecimalPlaces;
-    [Description("大刻度显示小数位数")]
-    public int ScaleDecimalPlaces { get => _scaleDecimalPlaces; set { _scaleDecimalPlaces = Math.Max(0, value); Invalidate(); } }
+    [Description("大刻度显示小数位数"), DefaultValue(-1)]
+    public int ScaleDecimalPlaces { get => _scaleDecimalPlaces; set { _scaleDecimalPlaces = Math.Max(-1, value); Invalidate(); } }
 
     private int _scaleDivisions = 10;
-    [Description("大刻度个数")]
-    public int ScaleDivisions { get => _scaleDivisions; set { _scaleDivisions = Math.Max(1, value); Invalidate(); } }
+    [Description("大刻度个数"), DefaultValue(10)]
+    public int ScaleDivisions { get => _scaleDivisions; set { _scaleDivisions = Math.Max(3, value); Invalidate(); } }
 
     private int _scaleSubDivisions = 5;
-    [Description("小刻度个数")]
+    [Description("小刻度个数"), DefaultValue(5)]
     public int ScaleSubDivisions { get => _scaleSubDivisions; set { _scaleSubDivisions = Math.Max(1, value); Invalidate(); } }
 
     private int _scaleLength = 8;
-    [Description("大刻度长度")]
+    [Description("大刻度长度"), DefaultValue(8)]
     public int ScaleLength { get => _scaleLength; set { _scaleLength = Math.Max(2, value); Invalidate(); } }
 
     private int _scaleSubLength = 4;
-    [Description("小刻度长度")]
+    [Description("小刻度长度"), DefaultValue(4)]
     public int ScaleSubLength { get => _scaleSubLength; set { _scaleSubLength = Math.Max(1, value); Invalidate(); } }
 
     private int _scaleWidth = 2;
-    [Description("大刻度线宽")]
+    [Description("大刻度线宽"), DefaultValue(2)]
     public int ScaleWidth { get => _scaleWidth; set { _scaleWidth = Math.Max(1, value); Invalidate(); } }
 
     private int _scaleSubWidth = 1;
-    [Description("小刻度线宽")]
+    [Description("小刻度线宽"), DefaultValue(1)]
     public int ScaleSubWidth { get => _scaleSubWidth; set { _scaleSubWidth = Math.Max(1, value); Invalidate(); } }
 
     private int _scaleInterval = 3;
-    [Description("刻度线和弧线直接的间隔")]
+    [Description("刻度线和弧线直接的间隔"), DefaultValue(3)]
     public int ScaleInterval { get => _scaleInterval; set { _scaleInterval = Math.Max(0, value); Invalidate(); } }
 
     private int _scaleTextInterval = 22;
-    [Description("刻度文本和弧线直接的间隔")]
+    [Description("刻度文本和弧线直接的间隔"), DefaultValue(22)]
     public int ScaleTextInterval { get => _scaleTextInterval; set { _scaleTextInterval = Math.Max(10, value); Invalidate(); } }
 
     //-------------单位-----------------
@@ -135,20 +136,20 @@ public class UIMeter : UIUserControl
 
     //------------圆弧------------------
     private int _innerSize = 110;
-    [Description("圆弧内圈尺寸")]
+    [Description("圆弧内圈尺寸"), DefaultValue(110)]
     public int InnerSize { get => _innerSize; set { _innerSize = Math.Max(10, value); Invalidate(); } }
 
     private int _outerSize = 120;
-    [Description("圆弧外圈尺寸")]
+    [Description("圆弧外圈尺寸"), DefaultValue(120)]
     public int OuterSize { get => _outerSize; set { _outerSize = Math.Max(InnerSize + 1, value); Invalidate(); } }
 
     private int _startAngle = 225;
     private int _stopAngle = 135;
 
-    [Description("起始角度")]
+    [Description("起始角度"), DefaultValue(225)]
     public int StartAngle { get => _startAngle; set { _startAngle = value; Invalidate(); } }
 
-    [Description("终止角度")]
+    [Description("终止角度"), DefaultValue(135)]
     public int StopAngle { get => _stopAngle; set { _stopAngle = value; Invalidate(); } }
 
     private Point _valueOffset = new(0, 0);
@@ -161,7 +162,7 @@ public class UIMeter : UIUserControl
     }
 
     private bool _showValue = true;
-    [Description("是否显示数值")]
+    [Description("是否显示数值"), DefaultValue(true)]
     public bool ShowValue
     {
         get => _showValue;
@@ -240,7 +241,26 @@ public class UIMeter : UIUserControl
         PointF pt1 = center.CalcAzRangePoint(InnerSize, StartAngle);
         PointF pt2 = center.CalcAzRangePoint(InnerSize, StopAngle);
 
-        string str = Value.ToString("F" + ValueDecimalPlaces) + Unit;
+        float scaleAngle = totalAngle * 1.0f / ScaleDivisions;
+        float scaleValue = totalValue * 1.0f / _scaleDivisions;
+        float scaleSubAngle = scaleAngle * 1.0f / ScaleSubDivisions;
+
+        int decimalPlaces;
+        if (ValueDecimalPlaces >= 0)
+        {
+            decimalPlaces = ValueDecimalPlaces;
+        }
+        else
+        {
+            if (scaleValue >= 10) decimalPlaces = 0;
+            else if (scaleValue >= 1) decimalPlaces = 1;
+            else if (scaleValue >= 0.1f) decimalPlaces = 2;
+            else if (scaleValue >= 0.01f) decimalPlaces = 3;
+            else if (scaleValue >= 0.001f) decimalPlaces = 4;
+            else decimalPlaces = 5;
+        }
+
+        string str = Value.ToString("F" + decimalPlaces) + Unit;
         SizeF sf = e.Graphics.MeasureString(str, Font);
         using var vbr = new SolidBrush(ForeColor);
 
@@ -250,12 +270,23 @@ public class UIMeter : UIUserControl
             e.Graphics.DrawString(str, Font, vbr, pt1.X + (pt2.X - pt1.X - sf.Width) / 2 + ValueOffset.X, pt1.Y - sf.Height + ValueOffset.Y);
         }
 
-        float scaleAngle = totalAngle * 1.0f / ScaleDivisions;
-        float scaleValue = totalValue * 1.0f / _scaleDivisions;
-        float scaleSubAngle = scaleAngle * 1.0f / ScaleSubDivisions;
         using var pen1 = new Pen(ForeColor, ScaleWidth);
         using var pen2 = new Pen(ForeColor, ScaleSubWidth);
         using var sbr = new SolidBrush(ForeColor);
+
+        if (ScaleDecimalPlaces >= 0)
+        {
+            decimalPlaces = ScaleDecimalPlaces;
+        }
+        else
+        {
+            if (scaleValue >= 10) decimalPlaces = 0;
+            else if (scaleValue >= 1) decimalPlaces = 1;
+            else if (scaleValue >= 0.1f) decimalPlaces = 2;
+            else if (scaleValue >= 0.01f) decimalPlaces = 3;
+            else if (scaleValue >= 0.001f) decimalPlaces = 4;
+            else decimalPlaces = 5;
+        }
 
         //绘制刻度线
         for (int i = 0; i <= _scaleDivisions; i++)
@@ -268,7 +299,7 @@ public class UIMeter : UIUserControl
             e.Graphics.DrawLine(pen1, pt1, pt2);
 
             pt1 = center.CalcAzRangePoint(InnerSize - ScaleTextInterval, ag);
-            str = va.ToString("F" + ScaleDecimalPlaces);
+            str = va.ToString("F" + decimalPlaces);
             sf = e.Graphics.MeasureString(str, ScaleFont);
             e.Graphics.DrawString(str, ScaleFont, sbr, pt1.X - sf.Width / 2, pt1.Y - sf.Height / 2);
 
