@@ -52,6 +52,7 @@
  * 2024-09-04: V3.7.0 解决有隐藏行时，滚动条滚动时出错的问题
  * 2025-04-21: V3.8.3 修复数据更新时是否自动滚动到最后一行
  * 2025-12-05: V3.9.0 修改行头部颜色
+ * 2026-03-31: V3.9.3 修复了一个SelectedIndex属性读写可能不一致的问题
 ******************************************************************************/
 
 using System;
@@ -748,7 +749,7 @@ namespace Sunny.UI
             DefaultCellStyle.BackColor = uiColor.GridStripeEvenColor;
             DefaultCellStyle.ForeColor = uiColor.GridForeColor;
 
-            //数据行选中颜色            
+            //数据行选中颜色
             RowsDefaultCellStyle.SelectionBackColor = uiColor.GridSelectedColor;
             RowsDefaultCellStyle.SelectionForeColor = uiColor.GridSelectedForeColor;
             RowsDefaultCellStyle.ForeColor = uiColor.GridForeColor;
@@ -832,7 +833,6 @@ namespace Sunny.UI
             }
             set
             {
-                //BindingContext[DataSource].Position = value;
                 if (Rows.Count == 0)
                 {
                     return;
@@ -845,20 +845,45 @@ namespace Sunny.UI
                         row.Selected = false;
                     }
 
-                    Rows[value].Selected = true;
+                    //Rows[value].Selected = true;
+
+                    int columnIndex = GetCurrentColumnIndex();
+                    if (columnIndex >= 0 && Rows[value].Visible)
+                    {
+                        CurrentCell = Rows[value].Cells[columnIndex];
+                    }
 
                     SetFirstDisplayedScrollingRowIndex(value);
-
-                    if (selectedIndex >= 0 && selectedIndex <= Rows.Count)
-                        jumpIndex = selectedIndex;
-
-                    selectedIndex = value;
-                    SelectIndexChange?.Invoke(this, value);
+                    //SelectIndexChange?.Invoke(this, value);
                 }
             }
         }
 
-        private int jumpIndex = -1;
+        protected override void OnRowEnter(DataGridViewCellEventArgs e)
+        {
+            base.OnRowEnter(e);
+            if (CurrentRow == null) return;
+            if (e.RowIndex == SelectedIndex) return;
+            SelectIndexChange?.Invoke(this, e.RowIndex);
+        }
+
+        private int GetCurrentColumnIndex()
+        {
+            if (CurrentCell != null && Columns[CurrentCell.ColumnIndex].Visible)
+            {
+                return CurrentCell.ColumnIndex;
+            }
+
+            for (int i = 0; i < Columns.Count; i++)
+            {
+                if (Columns[i].Visible)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
 
         protected override void OnDataSourceChanged(EventArgs e)
         {
@@ -869,25 +894,6 @@ namespace Sunny.UI
         public delegate void OnSelectIndexChange(object sender, int index);
 
         public event OnSelectIndexChange SelectIndexChange;
-
-        protected override void OnRowEnter(DataGridViewCellEventArgs e)
-        {
-            base.OnRowEnter(e);
-
-            if (e.RowIndex == jumpIndex)
-            {
-                jumpIndex = -1;
-                return;
-            }
-
-            if (selectedIndex != e.RowIndex)
-            {
-                selectedIndex = e.RowIndex;
-                SelectIndexChange?.Invoke(this, e.RowIndex);
-            }
-        }
-
-        private int selectedIndex = -1;
 
         public DataGridViewColumn AddColumn(string columnName, string dataPropertyName, int fillWeight = 100, DataGridViewContentAlignment alignment = DataGridViewContentAlignment.MiddleCenter, bool readOnly = true)
         {
