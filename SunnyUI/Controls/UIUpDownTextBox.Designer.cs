@@ -19,6 +19,7 @@
             }
 
             _timer?.Dispose();
+            _valueTimer?.Dispose();
             _edit?.Dispose();
             base.Dispose(disposing);
         }
