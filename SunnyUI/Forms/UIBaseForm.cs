@@ -147,7 +147,7 @@ namespace Sunny.UI
 
         public event EventHandler UIStyleChanged;
 
-        public void Render()
+        public virtual void Render()
         {
             if (DesignMode) return;
 

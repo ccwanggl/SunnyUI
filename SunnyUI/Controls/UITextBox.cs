@@ -964,7 +964,7 @@ namespace Sunny.UI
             base.SetStyleColor(uiColor);
 
             fillColor = uiColor.EditorBackColor;
-            foreColor = UIFontColor.Primary;
+            _symbolColor = foreColor = uiColor.EditorForeColor;
             edit.BackColor = GetFillColor();
             edit.ForeColor = GetForeColor();
             edit.ForeDisableColor = uiColor.ForeDisableColor;

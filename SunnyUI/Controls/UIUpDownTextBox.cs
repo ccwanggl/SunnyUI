@@ -970,7 +970,7 @@ namespace Sunny.UI
             base.SetStyleColor(uiColor);
 
             fillColor = uiColor.EditorBackColor;
-            foreColor = UIFontColor.Primary;
+            foreColor = uiColor.EditorForeColor;
             _edit.BackColor = GetFillColor();
             _edit.ForeColor = GetForeColor();
             _edit.ForeDisableColor = uiColor.ForeDisableColor;

@@ -132,6 +132,12 @@ namespace Sunny.UI
         Black = 102,
 
         /// <summary>
+        /// 深色
+        /// </summary>
+        [Description("Dark")]
+        Dark = 103,
+
+        /// <summary>
         /// 多彩的
         /// </summary>
         [Description("Colorful")]
@@ -202,6 +208,11 @@ namespace Sunny.UI
         /// 深蓝
         /// </summary>
         public static readonly Color DarkBlue = Color.FromArgb(14, 30, 63);
+
+        /// <summary>
+        /// 深蓝
+        /// </summary>
+        public static readonly Color Dark = Color.FromArgb(56, 56, 56);
 
         /// <summary>
         /// 白

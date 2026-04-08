@@ -20,7 +20,7 @@
  * 2020-07-07: V2.2.6 全部重写，增加圆角，CheckBoxes等
  * 2020-08-12: V2.2.7 更新可设置背景色
  * 2021-07-19: V3.0.5 调整了显示CheckBoxes时图片位置
- * 2021-08-26: V3.0.6 CheckBoxes增加三态，感谢群友：笑口常开 
+ * 2021-08-26: V3.0.6 CheckBoxes增加三态，感谢群友：笑口常开
  * 2022-01-05: V3.0.9 TreeNodeStateSync: 节点点击时同步父节点和子节点的状态
  * 2022-03-19: V3.1.1 重构主题配色
  * 2022-04-01: V3.1.2 增加水平滚动条
@@ -929,9 +929,9 @@ namespace Sunny.UI
             Bar = new UIScrollBar();
             HBar = new UIHorScrollBar();
             SuspendLayout();
-            // 
+            //
             // view
-            // 
+            //
             view.BackColor = Color.White;
             view.BorderStyle = BorderStyle.None;
             view.DrawMode = TreeViewDrawMode.OwnerDrawAll;
@@ -952,9 +952,9 @@ namespace Sunny.UI
             view.AfterCollapse += view_AfterCollapse;
             view.AfterExpand += view_AfterExpand;
             view.DrawNode += view_DrawNode;
-            // 
+            //
             // Bar
-            // 
+            //
             Bar.Font = new Font("宋体", 12F);
             Bar.Location = new Point(247, 3);
             Bar.MinimumSize = new Size(1, 1);
@@ -965,9 +965,9 @@ namespace Sunny.UI
             Bar.TabIndex = 2;
             Bar.Visible = false;
             Bar.ValueChanged += Bar_ValueChanged;
-            // 
+            //
             // HBar
-            // 
+            //
             HBar.Font = new Font("宋体", 12F);
             HBar.Location = new Point(247, 3);
             HBar.MinimumSize = new Size(1, 1);
@@ -978,9 +978,9 @@ namespace Sunny.UI
             HBar.TabIndex = 3;
             HBar.Visible = false;
             HBar.ValueChanged += HBar_ValueChanged;
-            // 
+            //
             // UITreeView
-            // 
+            //
             Controls.Add(Bar);
             Controls.Add(HBar);
             Controls.Add(view);

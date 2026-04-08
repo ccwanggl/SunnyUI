@@ -594,7 +594,10 @@ namespace Sunny.UI
         {
             base.SetStyleColor(uiColor);
             foreColor = uiColor.DropDownPanelForeColor;
-            edit.BackColor = fillColor = Color.White;
+            foreColor = uiColor.EditorForeColor;
+            fillColor = edit.BackColor = uiColor.EditorBackColor;
+            edit.ForeColor = uiColor.EditorForeColor;
+            edit.ForeDisableColor = uiColor.ForeDisableColor;
         }
 
         protected override void AfterSetFillColor(Color color)

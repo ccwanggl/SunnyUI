@@ -204,6 +204,7 @@ namespace Sunny.UI
 
         //TextBox
         public virtual Color EditorBackColor { get; protected set; }
+        public virtual Color EditorForeColor { get; protected set; }
 
         //DataGridView
         public virtual Color GridSelectedColor { get; protected set; }
@@ -396,6 +397,7 @@ namespace Sunny.UI
             TreeViewLineColor = foreColor;
 
             EditorBackColor = UIColor.White;
+            EditorForeColor = UIFontColor.Primary;
 
             NavMenuMenuSelectedColor = PrimaryColor;
 
@@ -423,6 +425,61 @@ namespace Sunny.UI
         }
 
         public virtual bool BuiltIn => true;
+    }
+
+    public class UIDarkStyle : UIBaseStyle
+    {
+        public UIDarkStyle()
+        {
+            base.Init(UIColor.Blue, UIStyle.Dark, Color.White, UIFontColor.Primary);
+
+            PrimaryColor = UIColor.Dark;
+            RectColor = Color.DarkGray;
+            PlainColor = UIColor.Dark;
+            Color ForeColor = Color.White;
+
+            FormTitleColor = PrimaryColor;
+            FormTitleForeColor = ForeColor;
+            FormForeColor = ForeColor;
+            FormRectColor = RectColor;
+
+            ButtonFillColor = PrimaryColor;
+            ButtonRectColor = RectColor;
+            ButtonForeSelectedColor = ButtonForeColor = ForeColor;
+            ButtonRectSelectedColor = RectColor;
+            ButtonFillSelectedColor = Color.FromArgb(39, 24, 27);
+
+            PanelFillColor = PrimaryColor;
+            PanelForeColor = ForeColor;
+            PanelRectColor = RectColor;
+
+            LabelForeColor = ForeColor;
+
+            LineRectColor = RectColor;
+
+            EditorBackColor = PrimaryColor;
+            EditorForeColor = ForeColor;
+
+            CheckBoxColor = RectColor;
+            CheckBoxForeColor = ForeColor;
+
+            PageBackColor = PanelFillColor;
+
+            TabControlBackColor = PrimaryColor;
+
+            TreeViewForeColor = ForeColor;
+            TreeViewBackColor = PrimaryColor;
+            TreeViewHoverColor = ButtonFillSelectedColor;
+
+            ListBarFillColor = PrimaryColor;
+            ListBarForeColor = RectColor;
+            ListBackColor = PrimaryColor;
+            ListForeColor = ForeColor;
+            ListItemHoverColor = ButtonFillSelectedColor;
+
+            ScrollBarFillColor = PrimaryColor;
+            ScrollBarForeColor = RectColor;
+        }
     }
 
     public class UIPurpleStyle : UIBaseStyle

@@ -329,7 +329,7 @@ namespace Sunny.UI
             }
         }
 
-        public void Render()
+        public virtual void Render()
         {
             if (DesignMode) return;
 

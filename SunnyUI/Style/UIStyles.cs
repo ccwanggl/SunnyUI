@@ -196,6 +196,11 @@ namespace Sunny.UI
         public static readonly UIBaseStyle Black = new UIBlackStyle();
 
         /// <summary>
+        /// 深色
+        /// </summary>
+        public static readonly UIBaseStyle Dark = new UIDarkStyle();
+
+        /// <summary>
         /// 紫
         /// </summary>
         public static readonly UIBaseStyle Purple = new UIPurpleStyle();
@@ -237,6 +242,7 @@ namespace Sunny.UI
 
             AddStyle(Black);
             AddStyle(Purple);
+            AddStyle(Dark);
 
             AddStyle(Colorful);
 
