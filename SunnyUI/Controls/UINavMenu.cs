@@ -1,45 +1,47 @@
 ﻿/******************************************************************************
-* SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
-* CopyRight (C) 2012-2023 ShenYongHua(沈永华).
-* QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
-*
-* Blog:   https://www.cnblogs.com/yhuse
-* Gitee:  https://gitee.com/yhuse/SunnyUI
-* GitHub: https://github.com/yhuse/SunnyUI
-*
-* SunnyUI.dll can be used for free under the GPL-3.0 license.
-* If you use this code, please keep this note.
-* 如果您使用此代码，请保留此说明。
-******************************************************************************
-* 文件名称: UINavMenu.cs
-* 文件说明: 导航菜单
-* 当前版本: V3.1
-* 创建日期: 2020-01-01
-*
-* 2020-01-01: V2.2.0 增加文件说明
-* 2020-07-01: V2.2.6 解决引发事件所有结点重绘导致闪烁；解决滚轮失效问题。
-* 2020-03-12: V3.0.2 增加设置二级菜单底色
-* 2021-06-14: V3.0.4 增加右侧图标
-* 2021-08-07: V3.0.5 显示/隐藏子节点提示箭头
-* 2021-08-27: V3.0.6 增加自定义TipsText显示的颜色 
-* 2021-12-13: V3.0.9 选中项可设置背景色渐变
-* 2022-01-02: V3.0.9 滚动条可设置颜色
-* 2022-03-19: V3.1.1 重构主题配色
-* 2022-03-24: V3.1.1 修复TipsText显示位置
-* 2022-04-14: V3.1.3 重构扩展函数
-* 2022-06-23: V3.2.0 绘制节点字体图标增加偏移SymbolOffset
-* 2022-08-19: V3.2.3 修复选中节点右侧图标前景色
-* 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
-* 2022-11-03: V3.2.6 重写了节点右侧图标的绘制
-* 2023-02-02: V3.3.1 修复了鼠标离开事件
-* 2023-02-10: V3.3.2 有子节点时，鼠标左键点击父级点展开/收缩，右键选中
-* 2023-05-12: V3.3.6 重构DrawString函数
-* 2023-05-16: V3.3.6 重构DrawFontImage函数
-* 2023-05-29: V3.3.7 增加PageGuid相关扩展方法
-* 2023-11-16: V3.5.2 重构主题
-* 2024-04-13: V3.6.5 修复通过代码设置背景色无效的问题
-* 2024-05-17: V3.6.6 防止控件闪烁
-* 2025-04-17: V3.8.3 增加节点文字居中的属性
+ * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * CopyRight (C) 2012-2023 ShenYongHua(沈永华).
+ * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ *
+ * Blog:   https://www.cnblogs.com/yhuse
+ * Gitee:  https://gitee.com/yhuse/SunnyUI
+ * GitHub: https://github.com/yhuse/SunnyUI
+ *
+ * SunnyUI.dll can be used for free under the GPL-3.0 license.
+ * If you use this code, please keep this note.
+ * 如果您使用此代码，请保留此说明。
+ ******************************************************************************
+ * 文件名称: UINavMenu.cs
+ * 文件说明: 导航菜单
+ * 当前版本: V3.1
+ * 创建日期: 2020-01-01
+ *
+ * 2020-01-01: V2.2.0 增加文件说明
+ * 2020-07-01: V2.2.6 解决引发事件所有结点重绘导致闪烁；解决滚轮失效问题。
+ * 2020-03-12: V3.0.2 增加设置二级菜单底色
+ * 2021-06-14: V3.0.4 增加右侧图标
+ * 2021-08-07: V3.0.5 显示/隐藏子节点提示箭头
+ * 2021-08-27: V3.0.6 增加自定义TipsText显示的颜色
+ * 2021-12-13: V3.0.9 选中项可设置背景色渐变
+ * 2022-01-02: V3.0.9 滚动条可设置颜色
+ * 2022-03-19: V3.1.1 重构主题配色
+ * 2022-03-24: V3.1.1 修复TipsText显示位置
+ * 2022-04-14: V3.1.3 重构扩展函数
+ * 2022-06-23: V3.2.0 绘制节点字体图标增加偏移SymbolOffset
+ * 2022-08-19: V3.2.3 修复选中节点右侧图标前景色
+ * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
+ * 2022-11-03: V3.2.6 重写了节点右侧图标的绘制
+ * 2023-02-02: V3.3.1 修复了鼠标离开事件
+ * 2023-02-10: V3.3.2 有子节点时，鼠标左键点击父级点展开/收缩，右键选中
+ * 2023-05-12: V3.3.6 重构DrawString函数
+ * 2023-05-16: V3.3.6 重构DrawFontImage函数
+ * 2023-05-29: V3.3.7 增加PageGuid相关扩展方法
+ * 2023-11-16: V3.5.2 重构主题
+ * 2024-04-13: V3.6.5 修复通过代码设置背景色无效的问题
+ * 2024-05-17: V3.6.6 防止控件闪烁
+ * 2025-04-17: V3.8.3 增加节点文字居中的属性
+ * 2026-04-09: V3.9.4 增加节点右侧文本显示功能
+ * 2026-04-09: V3.9.4 增加节点展开箭头位置属性，可以设置箭头显示在左侧
 ******************************************************************************/
 
 using System;
@@ -120,6 +122,18 @@ namespace Sunny.UI
                     _nodeTextAlign = value;
                     Invalidate();
                 }
+            }
+        }
+
+        [DefaultValue(false), Category("SunnyUI"), Description("节点展开箭头位于左侧显示")]
+        public bool ExpandArrowLeft
+        {
+            get;
+            set
+            {
+                if (field == value) return;
+                field = value;
+                Invalidate();
             }
         }
 
@@ -767,6 +781,12 @@ namespace Sunny.UI
                         e.Graphics.DrawFontImage(TreeNodeSymbols[e.Node][i], 24, rightSymbolColor, new Rectangle(firstLeft + i * 30, e.Bounds.Top, 30, e.Bounds.Height));
                     }
                 }
+                else if (TreeNodeTexts.ContainsKey(e.Node))
+                {
+                    int width = e.Bounds.Width - 6;
+                    if (Bar.Visible) width -= Bar.Width;
+                    e.Graphics.DrawString(TreeNodeTexts[e.Node], Font, ForeColor, new Rectangle(e.Bounds.X, e.Bounds.Y, width, ItemHeight), ContentAlignment.MiddleRight);
+                }
 
                 //画图片
                 if (haveImage)
@@ -790,12 +810,21 @@ namespace Sunny.UI
                 if (ShowItemsArrow && e.Node.Nodes.Count > 0)
                 {
                     int size = 24;
-                    int left = Width - size - 6;
-                    if (Bar.Visible) left -= Bar.Width;
-
                     SizeF sf = e.Graphics.GetFontImageSize(61702, 24);
-                    Rectangle rect = new Rectangle((int)(left + sf.Width / 2) - 12, e.Bounds.Y, 24, e.Bounds.Height);
-                    e.Graphics.DrawFontImage(e.Node.IsExpanded ? 61702 : 61703, 24, ForeColor, rect);
+
+                    if (ExpandArrowLeft)
+                    {
+                        int left = e.Node.Level * 16 + 16 + 4;
+                        Rectangle rect = new Rectangle(left - 16, e.Bounds.Y, 20, e.Bounds.Height);
+                        e.Graphics.DrawFontImage(e.Node.IsExpanded ? 61702 : 61703, 24, ForeColor, rect);
+                    }
+                    else
+                    {
+                        int left = Width - size - 6;
+                        if (Bar.Visible) left -= Bar.Width;
+                        Rectangle rect = new Rectangle((int)(left + sf.Width / 2) - 12, e.Bounds.Y, 24, e.Bounds.Height);
+                        e.Graphics.DrawFontImage(e.Node.IsExpanded ? 61702 : 61703, 24, ForeColor, rect);
+                    }
                 }
 
                 //显示Tips圆圈
@@ -1232,6 +1261,7 @@ namespace Sunny.UI
         }
 
         private readonly Dictionary<TreeNode, List<int>> TreeNodeSymbols = new Dictionary<TreeNode, List<int>>();
+        private readonly Dictionary<TreeNode, string> TreeNodeTexts = new Dictionary<TreeNode, string>();
 
         public void AddNodeRightSymbol(TreeNode node, int symbol)
         {
@@ -1262,6 +1292,18 @@ namespace Sunny.UI
                 TreeNodeSymbols[node].Clear();
                 Invalidate();
             }
+        }
+
+        public void AddNodeRightText(TreeNode node, string text)
+        {
+            TreeNodeTexts[node] = text;
+            Invalidate();
+        }
+
+        public void RemoveNodeRightText(TreeNode node)
+        {
+            TreeNodeTexts.Remove(node);
+            Invalidate();
         }
 
         #endregion 扩展函数
