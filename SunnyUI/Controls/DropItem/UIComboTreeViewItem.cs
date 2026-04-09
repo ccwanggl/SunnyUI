@@ -122,6 +122,7 @@ namespace Sunny.UI
             // btnCancel
             // 
             btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnCancel.BackColor = System.Drawing.Color.Transparent;
             btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             btnCancel.Font = new System.Drawing.Font("宋体", 10.5F);
             btnCancel.Location = new System.Drawing.Point(159, 8);
@@ -140,6 +141,7 @@ namespace Sunny.UI
             // btnOK
             // 
             btnOK.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnOK.BackColor = System.Drawing.Color.Transparent;
             btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             btnOK.Font = new System.Drawing.Font("宋体", 10.5F);
             btnOK.Location = new System.Drawing.Point(70, 8);

@@ -72,6 +72,7 @@ namespace Sunny.UI
         public virtual Color ImageButtonForeColor { get; protected set; }
 
         //Breadcrumb
+        public virtual Color BreadcrumbSelectedColor { get; protected set; }
         public virtual Color BreadcrumbUnSelectedColor { get; protected set; }
 
         //CheckBox
@@ -122,9 +123,11 @@ namespace Sunny.UI
         public virtual Color ScrollBarFillPressColor { get; protected set; }
 
         //ProcessBar
+        public virtual Color ProcessColor { get; protected set; }
+        public virtual Color ProcessForeColor { get; protected set; }
         public virtual Color ProcessBarFillColor { get; protected set; }
         public virtual Color ProcessBarForeColor { get; protected set; }
-        public virtual Color ProcessBackColor { get; protected set; }
+        public virtual Color ProcessRectColor { get; protected set; }
 
         //SmoothLabel
         public virtual Color SmoothLabelForeColor { get; protected set; }
@@ -305,6 +308,7 @@ namespace Sunny.UI
 
             BatteryFillColor = PlainColor;
 
+            BreadcrumbSelectedColor = PrimaryColor;
             BreadcrumbUnSelectedColor = colors[6];
 
             AvatarFillColor = Color.Silver;
@@ -351,7 +355,9 @@ namespace Sunny.UI
 
             ProcessBarFillColor = PlainColor;
             ProcessBarForeColor = PrimaryColor;
-            ProcessBackColor = colors[6];
+            ProcessColor = PrimaryColor;
+            ProcessForeColor = PlainColor;
+            ProcessRectColor = PrimaryColor;
 
             SmoothLabelForeColor = ButtonForeColor;
             SmoothLabelRectColor = ButtonRectColor;
@@ -437,48 +443,157 @@ namespace Sunny.UI
             RectColor = Color.DarkGray;
             PlainColor = UIColor.Dark;
             Color ForeColor = Color.White;
+            Color SelectedColor = Color.FromArgb(39, 24, 27);
 
-            FormTitleColor = PrimaryColor;
-            FormTitleForeColor = ForeColor;
-            FormForeColor = ForeColor;
-            FormRectColor = RectColor;
-
+            //Button
             ButtonFillColor = PrimaryColor;
             ButtonRectColor = RectColor;
             ButtonForeSelectedColor = ButtonForeColor = ForeColor;
             ButtonRectSelectedColor = RectColor;
-            ButtonFillSelectedColor = Color.FromArgb(39, 24, 27);
+            ButtonFillSelectedColor = SelectedColor;
 
-            PanelFillColor = PrimaryColor;
-            PanelForeColor = ForeColor;
-            PanelRectColor = RectColor;
+            //Battery
+            BatteryFillColor = PrimaryColor;
 
-            LabelForeColor = ForeColor;
+            //Avatar
+            AvatarFillColor = SelectedColor;
+            AvatarForeColor = ForeColor;
 
-            LineRectColor = RectColor;
+            //ImageButton
+            ImageButtonForeColor = ForeColor;
 
-            EditorBackColor = PrimaryColor;
-            EditorForeColor = ForeColor;
+            //Breadcrumb
+            BreadcrumbSelectedColor = UIColor.Blue;
+            BreadcrumbUnSelectedColor = RectColor;
 
+            //CheckBox
             CheckBoxColor = RectColor;
             CheckBoxForeColor = ForeColor;
 
-            PageBackColor = PanelFillColor;
+            //Logo
+            LogoForeColor = UIFontColor.Primary;
+            LogoFillColor = UIColor.Blue;
 
+            //Line
+            LineRectColor = RectColor;
+            LineFillColor = PrimaryColor;
+            LineForeColor = ForeColor;
+
+            //TrackBar
+            TrackBarFillColor = PrimaryColor;
+            TrackBarForeColor = ForeColor;
+            TrackBarRectColor = UIColor.Blue;
+            TrackDisableColor = RectColor;
+
+            //Label
+            LabelForeColor = ForeColor;
+
+            //LabelRotate
+            LabelRotateFrameColor = PrimaryColor;
+            LabelRotateForeColor = ForeColor;
+
+            //ContextMenu
+            ContextMenuColor = PrimaryColor;
+            ContextMenuSelectedColor = SelectedColor;
+            ContextMenuForeColor = ForeColor;
+
+            //ScrollBar
+            ScrollBarFillColor = PrimaryColor;
+            ScrollBarForeColor = RectColor;
+
+            //ProcessBar
+            ProcessBarFillColor = RectColor;// 空进度条背景颜色
+            ProcessBarForeColor = UIColor.Blue;// 空进度条文字颜色
+            ProcessColor = UIColor.Blue;// 进度条背景颜色
+            ProcessForeColor = ForeColor;// 进度条文字颜色
+            ProcessRectColor = RectColor;// 边框颜色
+
+            //ScrollingText
+            ScrollingTextFillColor = PrimaryColor;
+            ScrollingTextForeColor = ForeColor;
+
+            //LedLabel
+            LedLabelForeColor = ForeColor;
+
+            //UIMarkLabel
+            MarkLabelForeColor = ForeColor;
+
+            //Page
+            PageBackColor = PrimaryColor;
+            PageForeColor = ForeColor;
+            PageRectColor = RectColor;
+
+            //Form
+            FormTitleColor = PrimaryColor;
+            FormTitleForeColor = ForeColor;
+            FormForeColor = ForeColor;
+            FormRectColor = RectColor;
+            FormBackColor = PrimaryColor;
+
+            //ProgressIndicator
+            ProgressIndicatorColor = UIColor.Blue;
+
+            //TabControl
             TabControlBackColor = PrimaryColor;
 
-            TreeViewForeColor = ForeColor;
-            TreeViewBackColor = PrimaryColor;
-            TreeViewHoverColor = ButtonFillSelectedColor;
+            //Panel
+            PanelTitleColor = PanelFillColor2 = PanelFillColor = PrimaryColor;
+            PanelTitleForeColor = PanelForeColor = ForeColor;
+            PanelRectColor = RectColor;
 
+            //DropDownControl
+            DropDownControlColor = PrimaryColor;
+            DropDownPanelFillColor = PrimaryColor;
+            DropDownPanelForeColor = ForeColor;
+
+            //ListBox
             ListBarFillColor = PrimaryColor;
             ListBarForeColor = RectColor;
             ListBackColor = PrimaryColor;
             ListForeColor = ForeColor;
-            ListItemHoverColor = ButtonFillSelectedColor;
+            ListItemHoverColor = SelectedColor;
+            ListItemSelectBackColor = SelectedColor;
+            ListItemSelectForeColor = ForeColor;
 
-            ScrollBarFillColor = PrimaryColor;
-            ScrollBarForeColor = RectColor;
+            //TreeView
+            TreeViewForeColor = ForeColor;
+            TreeViewBackColor = PrimaryColor;
+            TreeViewHoverColor = SelectedColor;
+            TreeViewSelectedColor = SelectedColor;
+            TreeViewSelectedForeColor = ForeColor;
+            TreeViewBarFillColor = PrimaryColor;
+            TreeViewBarForeColor = RectColor;
+            TreeViewLineColor = RectColor;
+
+            //TextBox
+            EditorBackColor = PrimaryColor;
+            EditorForeColor = ForeColor;
+
+            //DataGridView
+            GridBarFillColor = PrimaryColor;
+            GridBarForeColor = RectColor;
+            GridSelectedColor = SelectedColor;
+            GridSelectedForeColor = ForeColor;
+
+            GridStripeEvenColor = PrimaryColor;
+            GridStripeOddColor = PrimaryColor;
+            GridLineColor = RectColor;
+            GridTitleColor = PrimaryColor;
+            GridTitleForeColor = ForeColor;
+            GridForeColor = ForeColor;
+
+            //DataGridViewFooter
+            DataGridViewFooterForeColor = ForeColor;
+
+            //Pagination
+            PaginationForeColor = ForeColor;
+
+            //FlowLayoutPanel
+            FlowLayoutPanelBarFillColor = PrimaryColor;
+            FlowLayoutPanelBarForeColor = RectColor;
+
+            //SplitContainer
+            SplitContainerArrowColor = ForeColor;
         }
     }
 

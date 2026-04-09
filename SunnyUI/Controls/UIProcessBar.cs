@@ -54,8 +54,20 @@ namespace Sunny.UI
             Size = new Size(300, 29);
             ShowText = false;
 
-            fillColor = UIColor.LightBlue;
-            foreColor = UIColor.Blue;
+            // 空进度条背景颜色
+            fillColor = UIStyles.Blue.ProcessBarFillColor;
+
+            // 空进度条文字颜色
+            foreColor = UIStyles.Blue.ProcessBarForeColor;
+
+            // 进度条背景颜色
+            fillColor2 = UIStyles.Blue.ProcessColor;
+
+            // 进度条文字颜色
+            foreSelectedColor = UIStyles.Blue.ProcessForeColor;
+
+            // 边框颜色
+            rectColor = UIStyles.Blue.ProcessRectColor;
         }
         private UILine.LineDirection direction = UILine.LineDirection.Horizontal;
 
@@ -162,6 +174,7 @@ namespace Sunny.UI
 
             if (ShowValue && canShow)
             {
+                // 空进度条文字颜色
                 DrawString(e.Graphics, processText, Font, foreColor, Size, Padding, TextAlign);
             }
 
@@ -177,11 +190,11 @@ namespace Sunny.UI
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
 
             g.SetHighQuality();
-            g.FillRoundRectangle(rectColor, rect, Radius);
+            g.FillRoundRectangle(fillColor2, rect, Radius);
             g.DrawRoundRectangle(rectColor, rect, Radius);
             if (ShowValue && canShow)
             {
-                DrawString(g, processText, Font, fillColor, Size, Padding, TextAlign);
+                DrawString(g, processText, Font, foreSelectedColor, Size, Padding, TextAlign);
             }
 
             if (Direction == UILine.LineDirection.Horizontal)
@@ -287,14 +300,49 @@ namespace Sunny.UI
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
+
+            // 空进度条背景颜色
             fillColor = uiColor.ProcessBarFillColor;
+
+            // 空进度条文字颜色
             foreColor = uiColor.ProcessBarForeColor;
+
+            // 进度条背景颜色
+            fillColor2 = uiColor.ProcessColor;
+
+            // 进度条文字颜色
+            foreSelectedColor = uiColor.ProcessForeColor;
+
+            // 边框颜色
+            rectColor = uiColor.ProcessRectColor;
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// 进度条背景颜色
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("进度条背景颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "80, 160, 255")]
+        public Color ProcessColor
+        {
+            get => fillColor2;
+            set => SetFillColor2(value);
+        }
+
+        /// <summary>
+        /// 进度条文字颜色
+        /// </summary>
+        [Description("进度条文字颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "243, 249, 255")]
+        public Color ProcessForeColor
+        {
+            get => foreSelectedColor;
+            set => SetForeSelectedColor(value);
+        }
+
+        /// <summary>
+        /// 空进度条背景颜色
+        /// </summary>
+        [Description("空进度条背景颜色"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -303,9 +351,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// 空进度条文字颜色
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("空进度条文字颜色"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public override Color ForeColor
         {

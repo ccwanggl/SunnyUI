@@ -47,12 +47,34 @@ namespace Sunny.UI
             Inner = 30;
             Outer = 50;
 
-            fillColor = UIStyles.Blue.ProcessBarForeColor;
+            // 空进度条背景颜色
+            fillColor = UIStyles.Blue.ProcessBarFillColor;
+
+            // 空进度条文字颜色
             foreColor = UIStyles.Blue.ProcessBarForeColor;
-            rectColor = UIStyles.Blue.ProcessBackColor;
+
+            // 进度条背景颜色
+            fillColor2 = UIStyles.Blue.ProcessColor;
+
+            // 进度条文字颜色
+            foreSelectedColor = UIStyles.Blue.ProcessForeColor;
+
+            // 边框颜色
+            rectColor = UIStyles.Blue.ProcessRectColor;
 
             ShowText = false;
             ShowRect = false;
+        }
+
+        /// <summary>
+        /// 进度条背景颜色
+        /// </summary>
+        [Description("进度条背景颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "80, 160, 255")]
+        public Color ProcessColor
+        {
+            get => fillColor2;
+            set => SetFillColor2(value);
         }
 
         private int startAngle = 0;
@@ -142,18 +164,6 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     进度条前景色
-        /// </summary>
-        [Description("进度条前景色")]
-        [Category("SunnyUI")]
-        [DefaultValue(typeof(Color), "80, 160, 255")]
-        public Color ProcessColor
-        {
-            get => fillColor;
-            set => SetFillColor(value);
-        }
-
-        /// <summary>
         ///     进度条背景色
         /// </summary>
         [Description("进度条背景色")]
@@ -204,21 +214,21 @@ namespace Sunny.UI
             {
                 Size size = TextRenderer.MeasureText(Text, Font);
                 if (Inner * 2 < size.Width - 4)
-                    g.DrawString(Text, Font, ForeColor2, new Rectangle(0, 0, Width, Height), ContentAlignment.MiddleCenter);
+                    g.DrawString(Text, Font, ProcessForeColor, new Rectangle(0, 0, Width, Height), ContentAlignment.MiddleCenter);
                 else
                     g.DrawString(Text, Font, ForeColor, new Rectangle(0, 0, Width, Height), ContentAlignment.MiddleCenter);
             }
         }
 
-        private Color foreColor2 = Color.Black;
-        public Color ForeColor2
+        /// <summary>
+        /// 进度条文字颜色
+        /// </summary>
+        [Description("进度条文字颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "243, 249, 255")]
+        public Color ProcessForeColor
         {
-            get => foreColor2;
-            set
-            {
-                foreColor2 = value;
-                Invalidate();
-            }
+            get => foreSelectedColor;
+            set => SetForeSelectedColor(value);
         }
 
         public delegate void OnValueChanged(object sender, int value);
@@ -254,10 +264,20 @@ namespace Sunny.UI
         {
             base.SetStyleColor(uiColor);
 
-            fillColor = uiColor.ProcessBarForeColor;
+            // 空进度条背景颜色
+            fillColor = uiColor.ProcessBarFillColor;
+
+            // 空进度条文字颜色
             foreColor = uiColor.ProcessBarForeColor;
-            rectColor = uiColor.ProcessBackColor;
-            foreColor2 = uiColor.RoundProcessForeColor2;
+
+            // 进度条背景颜色
+            fillColor2 = uiColor.ProcessColor;
+
+            // 进度条文字颜色
+            foreSelectedColor = uiColor.ProcessForeColor;
+
+            // 边框颜色
+            rectColor = uiColor.ProcessRectColor;
         }
 
         [DefaultValue(false)]

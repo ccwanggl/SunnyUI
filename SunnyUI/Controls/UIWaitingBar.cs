@@ -46,8 +46,20 @@ namespace Sunny.UI
             timer.Tick += Timer_Tick;
             timer.Start();
 
+            // 空进度条背景颜色
             fillColor = UIStyles.Blue.ProcessBarFillColor;
+
+            // 空进度条文字颜色
             foreColor = UIStyles.Blue.ProcessBarForeColor;
+
+            // 进度条背景颜色
+            fillColor2 = UIStyles.Blue.ProcessColor;
+
+            // 进度条文字颜色
+            foreSelectedColor = UIStyles.Blue.ProcessForeColor;
+
+            // 边框颜色
+            rectColor = UIStyles.Blue.ProcessRectColor;
         }
 
         protected override void Dispose(bool disposing)
@@ -74,7 +86,7 @@ namespace Sunny.UI
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            e.Graphics.FillRoundRectangle(foreColor, (int)dz + 1, 1, sliderWidth, Height - 3, Radius);
+            e.Graphics.FillRoundRectangle(fillColor2, (int)dz + 1, 1, sliderWidth, Height - 3, Radius);
         }
 
         //d是度数，不是弧度
@@ -146,14 +158,37 @@ namespace Sunny.UI
         }
 
         /// <summary>
+        /// 滑块背景颜色
+        /// </summary>
+        [Description("滑块背景颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "80, 160, 255")]
+        public Color SliderColor
+        {
+            get => fillColor2;
+            set => SetFillColor2(value);
+        }
+
+        /// <summary>
         /// 设置主题样式
         /// </summary>
         /// <param name="uiColor">主题样式</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
+            // 空进度条背景颜色
             fillColor = uiColor.ProcessBarFillColor;
+
+            // 空进度条文字颜色
             foreColor = uiColor.ProcessBarForeColor;
+
+            // 进度条背景颜色
+            fillColor2 = uiColor.ProcessColor;
+
+            // 进度条文字颜色
+            foreSelectedColor = uiColor.ProcessForeColor;
+
+            // 边框颜色
+            rectColor = uiColor.ProcessRectColor;
         }
 
         /// <summary>

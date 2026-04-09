@@ -141,6 +141,7 @@ namespace Sunny.UI
             // btnCancel
             // 
             btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCancel.BackColor = System.Drawing.Color.Transparent;
             btnCancel.Cursor = Cursors.Hand;
             btnCancel.FillColor = System.Drawing.Color.FromArgb(230, 80, 80);
             btnCancel.FillColor2 = System.Drawing.Color.FromArgb(230, 80, 80);
@@ -170,6 +171,7 @@ namespace Sunny.UI
             // btnOK
             // 
             btnOK.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnOK.BackColor = System.Drawing.Color.Transparent;
             btnOK.Cursor = Cursors.Hand;
             btnOK.Font = new System.Drawing.Font("宋体", 10.5F);
             btnOK.Location = new System.Drawing.Point(389, 8);
@@ -213,6 +215,7 @@ namespace Sunny.UI
             dataGridView.Location = new System.Drawing.Point(0, 44);
             dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(243, 249, 255);
             dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F);
@@ -252,6 +255,7 @@ namespace Sunny.UI
             // btnClear
             // 
             btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClear.BackColor = System.Drawing.Color.Transparent;
             btnClear.Cursor = Cursors.Hand;
             btnClear.Font = new System.Drawing.Font("宋体", 10.5F);
             btnClear.Location = new System.Drawing.Point(478, 8);
@@ -269,6 +273,7 @@ namespace Sunny.UI
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSearch.BackColor = System.Drawing.Color.Transparent;
             btnSearch.Cursor = Cursors.Hand;
             btnSearch.Font = new System.Drawing.Font("宋体", 10.5F);
             btnSearch.Location = new System.Drawing.Point(389, 8);
@@ -286,6 +291,7 @@ namespace Sunny.UI
             // edtFilter
             // 
             edtFilter.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            edtFilter.BackColor = System.Drawing.Color.Transparent;
             edtFilter.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             edtFilter.Cursor = Cursors.IBeam;
             edtFilter.Font = new System.Drawing.Font("宋体", 10.5F);

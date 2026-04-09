@@ -358,6 +358,7 @@ namespace Sunny.UI
         {
             base.SetStyleColor(uiColor);
 
+            fillColor = uiColor.BreadcrumbSelectedColor;
             unSelectedForeColor = uiColor.ButtonForeColor;
             rectColor = uiColor.BreadcrumbUnSelectedColor;
         }
