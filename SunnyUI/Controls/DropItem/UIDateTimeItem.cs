@@ -105,15 +105,14 @@ namespace Sunny.UI
             tabPage3.SuspendLayout();
             uiPanel1.SuspendLayout();
             SuspendLayout();
-            // 
+            //
             // TopPanel
-            // 
+            //
             TopPanel.Controls.Add(b4);
             TopPanel.Controls.Add(b3);
             TopPanel.Controls.Add(b2);
             TopPanel.Controls.Add(b1);
             TopPanel.Dock = DockStyle.Top;
-            TopPanel.FillColor = Color.White;
             TopPanel.Font = new Font("宋体", 12F);
             TopPanel.Location = new Point(0, 0);
             TopPanel.Margin = new Padding(4, 5, 4, 5);
@@ -122,109 +121,84 @@ namespace Sunny.UI
             TopPanel.RadiusSides = UICornerRadiusSides.None;
             TopPanel.RectSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Top | ToolStripStatusLabelBorderSides.Right;
             TopPanel.Size = new Size(284, 31);
-            TopPanel.Style = UIStyle.Custom;
             TopPanel.StyleCustomMode = true;
             TopPanel.TabIndex = 0;
             TopPanel.Text = "2020-05-05";
             TopPanel.TextAlignment = ContentAlignment.MiddleCenter;
             TopPanel.Click += TopPanel_Click;
-            // 
+            //
             // b4
-            // 
+            //
             b4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             b4.BackColor = Color.Transparent;
             b4.Cursor = Cursors.Hand;
-            b4.FillColor = Color.White;
-            b4.FillHoverColor = Color.FromArgb(80, 160, 255);
             b4.Font = new Font("宋体", 12F);
-            b4.ForeColor = Color.FromArgb(80, 160, 255);
             b4.Location = new Point(250, 4);
             b4.MinimumSize = new Size(1, 1);
             b4.Name = "b4";
             b4.Padding = new Padding(24, 0, 0, 0);
-            b4.RadiusSides = UICornerRadiusSides.None;
-            b4.RectHoverColor = Color.FromArgb(80, 160, 255);
             b4.RectSides = ToolStripStatusLabelBorderSides.None;
             b4.Size = new Size(30, 24);
-            b4.Style = UIStyle.Custom;
             b4.StyleCustomMode = true;
             b4.Symbol = 61697;
             b4.TabIndex = 3;
             b4.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b4.Click += b4_Click;
-            // 
+            //
             // b3
-            // 
+            //
             b3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             b3.BackColor = Color.Transparent;
             b3.Cursor = Cursors.Hand;
-            b3.FillColor = Color.White;
-            b3.FillHoverColor = Color.FromArgb(80, 160, 255);
             b3.Font = new Font("宋体", 12F);
-            b3.ForeColor = Color.FromArgb(80, 160, 255);
             b3.Location = new Point(214, 4);
             b3.MinimumSize = new Size(1, 1);
             b3.Name = "b3";
             b3.Padding = new Padding(24, 0, 0, 0);
-            b3.RadiusSides = UICornerRadiusSides.None;
-            b3.RectHoverColor = Color.FromArgb(80, 160, 255);
             b3.RectSides = ToolStripStatusLabelBorderSides.None;
             b3.Size = new Size(30, 24);
-            b3.Style = UIStyle.Custom;
             b3.StyleCustomMode = true;
             b3.Symbol = 61701;
             b3.TabIndex = 2;
             b3.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b3.Click += b3_Click;
-            // 
+            //
             // b2
-            // 
+            //
             b2.BackColor = Color.Transparent;
             b2.Cursor = Cursors.Hand;
-            b2.FillColor = Color.White;
-            b2.FillHoverColor = Color.FromArgb(80, 160, 255);
             b2.Font = new Font("宋体", 12F);
-            b2.ForeColor = Color.FromArgb(80, 160, 255);
             b2.Location = new Point(40, 4);
             b2.MinimumSize = new Size(1, 1);
             b2.Name = "b2";
             b2.Padding = new Padding(24, 0, 0, 0);
-            b2.RadiusSides = UICornerRadiusSides.None;
-            b2.RectHoverColor = Color.FromArgb(80, 160, 255);
             b2.RectSides = ToolStripStatusLabelBorderSides.None;
             b2.Size = new Size(30, 24);
-            b2.Style = UIStyle.Custom;
             b2.StyleCustomMode = true;
             b2.Symbol = 61700;
             b2.TabIndex = 1;
             b2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b2.Click += b2_Click;
-            // 
+            //
             // b1
-            // 
+            //
             b1.BackColor = Color.Transparent;
             b1.Cursor = Cursors.Hand;
-            b1.FillColor = Color.White;
-            b1.FillHoverColor = Color.FromArgb(80, 160, 255);
             b1.Font = new Font("宋体", 12F);
-            b1.ForeColor = Color.FromArgb(80, 160, 255);
             b1.Location = new Point(4, 4);
             b1.MinimumSize = new Size(1, 1);
             b1.Name = "b1";
             b1.Padding = new Padding(24, 0, 0, 0);
-            b1.RadiusSides = UICornerRadiusSides.None;
-            b1.RectHoverColor = Color.FromArgb(80, 160, 255);
             b1.RectSides = ToolStripStatusLabelBorderSides.None;
             b1.Size = new Size(30, 24);
-            b1.Style = UIStyle.Custom;
             b1.StyleCustomMode = true;
             b1.Symbol = 61696;
             b1.TabIndex = 0;
             b1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b1.Click += b1_Click;
-            // 
+            //
             // TabControl
-            // 
+            //
             TabControl.Controls.Add(tabPage1);
             TabControl.Controls.Add(tabPage2);
             TabControl.Controls.Add(tabPage3);
@@ -244,9 +218,9 @@ namespace Sunny.UI
             TabControl.TabUnSelectedForeColor = Color.FromArgb(240, 240, 240);
             TabControl.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             TabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
-            // 
+            //
             // tabPage1
-            // 
+            //
             tabPage1.Controls.Add(p1);
             tabPage1.Location = new Point(0, 40);
             tabPage1.Name = "tabPage1";
@@ -254,11 +228,10 @@ namespace Sunny.UI
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
-            // 
+            //
             // p1
-            // 
+            //
             p1.Dock = DockStyle.Fill;
-            p1.FillColor = Color.White;
             p1.Font = new Font("宋体", 12F);
             p1.Location = new Point(0, 0);
             p1.Margin = new Padding(4, 5, 4, 5);
@@ -266,7 +239,6 @@ namespace Sunny.UI
             p1.Name = "p1";
             p1.RadiusSides = UICornerRadiusSides.None;
             p1.Size = new Size(284, 164);
-            p1.Style = UIStyle.Custom;
             p1.TabIndex = 0;
             p1.Text = null;
             p1.TextAlignment = ContentAlignment.MiddleCenter;
@@ -274,9 +246,9 @@ namespace Sunny.UI
             p1.MouseClick += p1_MouseClick;
             p1.MouseLeave += p1_MouseLeave;
             p1.MouseMove += p1_MouseMove;
-            // 
+            //
             // tabPage2
-            // 
+            //
             tabPage2.Controls.Add(p2);
             tabPage2.Location = new Point(0, 40);
             tabPage2.Name = "tabPage2";
@@ -284,11 +256,10 @@ namespace Sunny.UI
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
+            //
             // p2
-            // 
+            //
             p2.Dock = DockStyle.Fill;
-            p2.FillColor = Color.White;
             p2.Font = new Font("宋体", 12F);
             p2.Location = new Point(0, 0);
             p2.Margin = new Padding(4, 5, 4, 5);
@@ -296,7 +267,6 @@ namespace Sunny.UI
             p2.Name = "p2";
             p2.RadiusSides = UICornerRadiusSides.None;
             p2.Size = new Size(200, 60);
-            p2.Style = UIStyle.Custom;
             p2.TabIndex = 1;
             p2.Text = null;
             p2.TextAlignment = ContentAlignment.MiddleCenter;
@@ -304,9 +274,9 @@ namespace Sunny.UI
             p2.MouseClick += p2_MouseClick;
             p2.MouseLeave += p2_MouseLeave;
             p2.MouseMove += p2_MouseMove;
-            // 
+            //
             // tabPage3
-            // 
+            //
             tabPage3.Controls.Add(p3);
             tabPage3.Location = new Point(0, 40);
             tabPage3.Name = "tabPage3";
@@ -314,11 +284,10 @@ namespace Sunny.UI
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
-            // 
+            //
             // p3
-            // 
+            //
             p3.Dock = DockStyle.Fill;
-            p3.FillColor = Color.White;
             p3.Font = new Font("宋体", 12F);
             p3.Location = new Point(0, 0);
             p3.Margin = new Padding(4, 5, 4, 5);
@@ -326,7 +295,6 @@ namespace Sunny.UI
             p3.Name = "p3";
             p3.RadiusSides = UICornerRadiusSides.None;
             p3.Size = new Size(200, 60);
-            p3.Style = UIStyle.Custom;
             p3.TabIndex = 2;
             p3.Text = null;
             p3.TextAlignment = ContentAlignment.MiddleCenter;
@@ -334,9 +302,9 @@ namespace Sunny.UI
             p3.MouseClick += p3_MouseClick;
             p3.MouseLeave += p3_MouseLeave;
             p3.MouseMove += p3_MouseMove;
-            // 
+            //
             // sb
-            // 
+            //
             sb.BackColor = Color.Transparent;
             sb.Font = new Font("宋体", 12F);
             sb.ForeColor = Color.DarkGray;
@@ -347,9 +315,9 @@ namespace Sunny.UI
             sb.TabIndex = 39;
             sb.Text = "00";
             sb.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            //
             // mb
-            // 
+            //
             mb.BackColor = Color.Transparent;
             mb.Font = new Font("宋体", 12F);
             mb.ForeColor = Color.DarkGray;
@@ -360,9 +328,9 @@ namespace Sunny.UI
             mb.TabIndex = 38;
             mb.Text = "00";
             mb.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            //
             // hb
-            // 
+            //
             hb.BackColor = Color.Transparent;
             hb.Font = new Font("宋体", 12F);
             hb.ForeColor = Color.DarkGray;
@@ -373,9 +341,9 @@ namespace Sunny.UI
             hb.TabIndex = 37;
             hb.Text = "00";
             hb.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            //
             // st
-            // 
+            //
             st.BackColor = Color.Transparent;
             st.Font = new Font("宋体", 12F);
             st.ForeColor = Color.DarkGray;
@@ -386,9 +354,9 @@ namespace Sunny.UI
             st.TabIndex = 36;
             st.Text = "00";
             st.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            //
             // mt
-            // 
+            //
             mt.BackColor = Color.Transparent;
             mt.Font = new Font("宋体", 12F);
             mt.ForeColor = Color.DarkGray;
@@ -399,9 +367,9 @@ namespace Sunny.UI
             mt.TabIndex = 35;
             mt.Text = "00";
             mt.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            //
             // ht
-            // 
+            //
             ht.BackColor = Color.Transparent;
             ht.Font = new Font("宋体", 12F);
             ht.ForeColor = Color.DarkGray;
@@ -412,9 +380,9 @@ namespace Sunny.UI
             ht.TabIndex = 34;
             ht.Text = "00";
             ht.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            //
             // sc
-            // 
+            //
             sc.BackColor = Color.Transparent;
             sc.Font = new Font("宋体", 12F);
             sc.ForeColor = Color.FromArgb(48, 48, 48);
@@ -426,9 +394,9 @@ namespace Sunny.UI
             sc.Text = "00";
             sc.TextAlign = ContentAlignment.MiddleCenter;
             sc.DoubleClick += sc_DoubleClick;
-            // 
+            //
             // mc
-            // 
+            //
             mc.BackColor = Color.Transparent;
             mc.Font = new Font("宋体", 12F);
             mc.ForeColor = Color.FromArgb(48, 48, 48);
@@ -440,9 +408,9 @@ namespace Sunny.UI
             mc.Text = "00";
             mc.TextAlign = ContentAlignment.MiddleCenter;
             mc.DoubleClick += mc_DoubleClick;
-            // 
+            //
             // hc
-            // 
+            //
             hc.BackColor = Color.Transparent;
             hc.Font = new Font("宋体", 12F);
             hc.ForeColor = Color.FromArgb(48, 48, 48);
@@ -454,9 +422,10 @@ namespace Sunny.UI
             hc.Text = "00";
             hc.TextAlign = ContentAlignment.MiddleCenter;
             hc.DoubleClick += hc_DoubleClick;
-            // 
+            //
             // btnCancel
-            // 
+            //
+            btnCancel.BackColor = Color.Transparent;
             btnCancel.Cursor = Cursors.Hand;
             btnCancel.Font = new Font("宋体", 12F);
             btnCancel.Location = new Point(370, 162);
@@ -464,16 +433,16 @@ namespace Sunny.UI
             btnCancel.Name = "btnCancel";
             btnCancel.Padding = new Padding(28, 0, 0, 0);
             btnCancel.Size = new Size(74, 27);
-            btnCancel.Style = UIStyle.Custom;
             btnCancel.Symbol = 361453;
             btnCancel.SymbolSize = 22;
             btnCancel.TabIndex = 30;
             btnCancel.Text = "取消";
             btnCancel.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             btnCancel.Click += btnCancel_Click;
-            // 
+            //
             // btnOK
-            // 
+            //
+            btnOK.BackColor = Color.Transparent;
             btnOK.Cursor = Cursors.Hand;
             btnOK.Font = new Font("宋体", 12F);
             btnOK.Location = new Point(291, 162);
@@ -481,159 +450,122 @@ namespace Sunny.UI
             btnOK.Name = "btnOK";
             btnOK.Padding = new Padding(28, 0, 0, 0);
             btnOK.Size = new Size(74, 27);
-            btnOK.Style = UIStyle.Custom;
             btnOK.SymbolSize = 22;
             btnOK.TabIndex = 29;
             btnOK.Text = "确定";
             btnOK.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             btnOK.Click += btnOK_Click;
-            // 
+            //
             // s2
-            // 
+            //
             s2.BackColor = Color.Transparent;
             s2.Cursor = Cursors.Hand;
-            s2.FillColor = Color.White;
-            s2.FillHoverColor = Color.FromArgb(80, 160, 255);
             s2.Font = new Font("宋体", 12F);
-            s2.ForeColor = Color.FromArgb(80, 160, 255);
             s2.Location = new Point(405, 129);
             s2.MinimumSize = new Size(1, 1);
             s2.Name = "s2";
             s2.Padding = new Padding(24, 0, 0, 0);
-            s2.RadiusSides = UICornerRadiusSides.None;
-            s2.RectHoverColor = Color.FromArgb(80, 160, 255);
             s2.RectSides = ToolStripStatusLabelBorderSides.None;
             s2.Size = new Size(30, 24);
-            s2.Style = UIStyle.Custom;
             s2.StyleCustomMode = true;
             s2.Symbol = 61703;
             s2.TabIndex = 28;
             s2.Tag = "6";
             s2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             s2.Click += s2_Click;
-            // 
+            //
             // mm2
-            // 
+            //
             mm2.BackColor = Color.Transparent;
             mm2.Cursor = Cursors.Hand;
-            mm2.FillColor = Color.White;
-            mm2.FillHoverColor = Color.FromArgb(80, 160, 255);
             mm2.Font = new Font("宋体", 12F);
-            mm2.ForeColor = Color.FromArgb(80, 160, 255);
             mm2.Location = new Point(352, 129);
             mm2.MinimumSize = new Size(1, 1);
             mm2.Name = "mm2";
             mm2.Padding = new Padding(24, 0, 0, 0);
-            mm2.RadiusSides = UICornerRadiusSides.None;
-            mm2.RectHoverColor = Color.FromArgb(80, 160, 255);
             mm2.RectSides = ToolStripStatusLabelBorderSides.None;
             mm2.Size = new Size(30, 24);
-            mm2.Style = UIStyle.Custom;
             mm2.StyleCustomMode = true;
             mm2.Symbol = 61703;
             mm2.TabIndex = 27;
             mm2.Tag = "5";
             mm2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             mm2.Click += mm2_Click;
-            // 
+            //
             // h2
-            // 
+            //
             h2.BackColor = Color.Transparent;
             h2.Cursor = Cursors.Hand;
-            h2.FillColor = Color.White;
-            h2.FillHoverColor = Color.FromArgb(80, 160, 255);
             h2.Font = new Font("宋体", 12F);
-            h2.ForeColor = Color.FromArgb(80, 160, 255);
             h2.Location = new Point(299, 128);
             h2.MinimumSize = new Size(1, 1);
             h2.Name = "h2";
             h2.Padding = new Padding(24, 0, 0, 0);
-            h2.RadiusSides = UICornerRadiusSides.None;
-            h2.RectHoverColor = Color.FromArgb(80, 160, 255);
             h2.RectSides = ToolStripStatusLabelBorderSides.None;
             h2.Size = new Size(30, 24);
-            h2.Style = UIStyle.Custom;
             h2.StyleCustomMode = true;
             h2.Symbol = 61703;
             h2.TabIndex = 26;
             h2.Tag = "4";
             h2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             h2.Click += h2_Click;
-            // 
+            //
             // s1
-            // 
+            //
             s1.BackColor = Color.Transparent;
             s1.Cursor = Cursors.Hand;
-            s1.FillColor = Color.White;
-            s1.FillHoverColor = Color.FromArgb(80, 160, 255);
             s1.Font = new Font("宋体", 12F);
-            s1.ForeColor = Color.FromArgb(80, 160, 255);
             s1.Location = new Point(405, 4);
             s1.MinimumSize = new Size(1, 1);
             s1.Name = "s1";
             s1.Padding = new Padding(24, 0, 0, 0);
-            s1.RadiusSides = UICornerRadiusSides.None;
-            s1.RectHoverColor = Color.FromArgb(80, 160, 255);
             s1.RectSides = ToolStripStatusLabelBorderSides.None;
             s1.Size = new Size(30, 24);
-            s1.Style = UIStyle.Custom;
             s1.StyleCustomMode = true;
             s1.Symbol = 61702;
             s1.TabIndex = 25;
             s1.Tag = "3";
             s1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             s1.Click += s1_Click;
-            // 
+            //
             // mm1
-            // 
+            //
             mm1.BackColor = Color.Transparent;
             mm1.Cursor = Cursors.Hand;
-            mm1.FillColor = Color.White;
-            mm1.FillHoverColor = Color.FromArgb(80, 160, 255);
             mm1.Font = new Font("宋体", 12F);
-            mm1.ForeColor = Color.FromArgb(80, 160, 255);
             mm1.Location = new Point(352, 4);
             mm1.MinimumSize = new Size(1, 1);
             mm1.Name = "mm1";
             mm1.Padding = new Padding(24, 0, 0, 0);
-            mm1.RadiusSides = UICornerRadiusSides.None;
-            mm1.RectHoverColor = Color.FromArgb(80, 160, 255);
             mm1.RectSides = ToolStripStatusLabelBorderSides.None;
             mm1.Size = new Size(30, 24);
-            mm1.Style = UIStyle.Custom;
             mm1.StyleCustomMode = true;
             mm1.Symbol = 61702;
             mm1.TabIndex = 24;
             mm1.Tag = "2";
             mm1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             mm1.Click += mm1_Click;
-            // 
+            //
             // h1
-            // 
+            //
             h1.BackColor = Color.Transparent;
             h1.Cursor = Cursors.Hand;
-            h1.FillColor = Color.White;
-            h1.FillHoverColor = Color.FromArgb(80, 160, 255);
             h1.Font = new Font("宋体", 12F);
-            h1.ForeColor = Color.FromArgb(80, 160, 255);
             h1.Location = new Point(299, 4);
             h1.MinimumSize = new Size(1, 1);
             h1.Name = "h1";
             h1.Padding = new Padding(24, 0, 0, 0);
-            h1.RadiusSides = UICornerRadiusSides.None;
-            h1.RectHoverColor = Color.FromArgb(80, 160, 255);
             h1.RectSides = ToolStripStatusLabelBorderSides.None;
             h1.Size = new Size(30, 24);
-            h1.Style = UIStyle.Custom;
             h1.StyleCustomMode = true;
             h1.Symbol = 61702;
             h1.TabIndex = 23;
             h1.Tag = "1";
             h1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             h1.Click += h1_Click;
-            // 
+            //
             // uiPanel1
-            // 
+            //
             uiPanel1.BackColor = Color.White;
             uiPanel1.Controls.Add(TabControl);
             uiPanel1.Controls.Add(TopPanel);
@@ -651,9 +583,9 @@ namespace Sunny.UI
             uiPanel1.TabIndex = 3;
             uiPanel1.Text = null;
             uiPanel1.TextAlignment = ContentAlignment.MiddleCenter;
-            // 
+            //
             // UIDateTimeItem
-            // 
+            //
             Controls.Add(sb);
             Controls.Add(uiPanel1);
             Controls.Add(mb);
@@ -672,10 +604,8 @@ namespace Sunny.UI
             Controls.Add(btnCancel);
             Controls.Add(s2);
             Controls.Add(btnOK);
-            FillColor = Color.White;
             Name = "UIDateTimeItem";
             Size = new Size(452, 235);
-            Style = UIStyle.Custom;
             StyleCustomMode = true;
             Paint += UIDateTimeItem_Paint;
             TopPanel.ResumeLayout(false);
@@ -1006,11 +936,15 @@ namespace Sunny.UI
         {
             base.SetStyleColor(uiColor);
 
-            btnOK.SetStyleColor(uiColor);
-            btnCancel.SetStyleColor(uiColor);
+            b1.SetStyleColor(uiColor);
+            b2.SetStyleColor(uiColor);
+            b3.SetStyleColor(uiColor);
+            b4.SetStyleColor(uiColor);
 
-            fillColor = Color.White;
-            foreColor = uiColor.DropDownPanelForeColor;
+            TopPanel.SetStyleColor(uiColor);
+            p1.SetStyleColor(uiColor);
+            p2.SetStyleColor(uiColor);
+            p3.SetStyleColor(uiColor);
 
             b1.SetStyleColor(uiColor);
             b2.SetStyleColor(uiColor);
@@ -1024,19 +958,26 @@ namespace Sunny.UI
             s1.SetStyleColor(uiColor);
             s2.SetStyleColor(uiColor);
 
-            b1.FillColor = b2.FillColor = b3.FillColor = b4.FillColor = TopPanel.FillColor;
-            h1.FillColor = h2.FillColor = mm1.FillColor = mm2.FillColor = s1.FillColor = s2.FillColor = TopPanel.FillColor;
+            hc.SetStyleColor(uiColor);
+            sc.SetStyleColor(uiColor);
+            mc.SetStyleColor(uiColor);
 
-            RectColor = uiColor.RectColor;
-            b1.ForeColor = b2.ForeColor = b3.ForeColor = b4.ForeColor = RectColor;
-            b1.SymbolColor = b2.SymbolColor = b3.SymbolColor = b4.SymbolColor = RectColor;
-            TopPanel.RectColor = p1.RectColor = p2.RectColor = p3.RectColor = RectColor;
-            h1.ForeColor = h2.ForeColor = RectColor;
-            mm1.ForeColor = mm2.ForeColor = RectColor;
-            s1.ForeColor = s2.ForeColor = RectColor;
-            h1.SymbolColor = h2.SymbolColor = RectColor;
-            mm1.SymbolColor = mm2.SymbolColor = RectColor;
-            s1.SymbolColor = s2.SymbolColor = RectColor;
+            btnOK.SetStyleColor(uiColor);
+            btnCancel.SetStyleColor(uiColor);
+
+            //b1.FillColor = b2.FillColor = b3.FillColor = b4.FillColor = TopPanel.FillColor;
+            //h1.FillColor = h2.FillColor = mm1.FillColor = mm2.FillColor = s1.FillColor = s2.FillColor = TopPanel.FillColor;
+            //
+            //RectColor = uiColor.RectColor;
+            //b1.ForeColor = b2.ForeColor = b3.ForeColor = b4.ForeColor = RectColor;
+            //b1.SymbolColor = b2.SymbolColor = b3.SymbolColor = b4.SymbolColor = RectColor;
+            //TopPanel.RectColor = p1.RectColor = p2.RectColor = p3.RectColor = RectColor;
+            //h1.ForeColor = h2.ForeColor = RectColor;
+            //mm1.ForeColor = mm2.ForeColor = RectColor;
+            //s1.ForeColor = s2.ForeColor = RectColor;
+            //h1.SymbolColor = h2.SymbolColor = RectColor;
+            //mm1.SymbolColor = mm2.SymbolColor = RectColor;
+            //s1.SymbolColor = s2.SymbolColor = RectColor;
         }
 
         private void UITimeItem_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -1203,10 +1144,8 @@ namespace Sunny.UI
                 }
                 else
                 {
-                    if (i + 1 == Month) color = PrimaryColor;
-                    if (i + 1 == Month) color = PrimaryColor;
-                    if (i == activeMonth) color = PrimaryColor;
-                    if (i == activeMonth) color = PrimaryColor;
+                    if (i + 1 == Month) color = b1.FillPressColor;
+                    if (i == activeMonth) color = b1.FillPressColor;
                 }
 
                 e.Graphics.DrawString(months[i], font, color, new Rectangle(left, top, width, height), ContentAlignment.MiddleCenter);
@@ -1267,10 +1206,8 @@ namespace Sunny.UI
                 }
                 else
                 {
-                    if (years[i] == Year) color = PrimaryColor;
-                    if (years[i] == Year) color = PrimaryColor;
-                    if (i == activeYear) color = PrimaryColor;
-                    if (i == activeYear) color = PrimaryColor;
+                    if (years[i] == Year) color = b1.FillPressColor;
+                    if (i == activeYear) color = b1.FillPressColor;
                 }
 
                 if (years[i] != 10000)
@@ -1337,18 +1274,18 @@ namespace Sunny.UI
                 int left = width * (i % 7);
                 int top = height * (i / 7);
                 Color color = (days[i].Month == Month) ? ForeColor : Color.DarkGray;
-                color = (days[i].DateString() == date.DateString()) ? b3.SymbolColor : color;
+                color = (days[i].DateString() == date.DateString()) ? b1.FillPressColor : color;
                 if (days[i] < min) color = Color.DarkGray;
                 if (days[i] > max) color = Color.DarkGray;
 
                 if (days[i].DateString() == date.DateString())
                 {
-                    e.Graphics.DrawRectangle(b3.SymbolColor, new Rectangle(left + 1, top + 30 * SizeMultiple + 1, width - 2, height - 2));
+                    e.Graphics.DrawRectangle(b1.FillPressColor, new Rectangle(left + 1, top + 30 * SizeMultiple + 1, width - 2, height - 2));
                 }
 
                 if (!maxDrawer)
                 {
-                    e.Graphics.DrawString(days[i].Day.ToString(), font, i == activeDay ? PrimaryColor : color, new Rectangle(left, top + 30 * SizeMultiple, width, height), ContentAlignment.MiddleCenter);
+                    e.Graphics.DrawString(days[i].Day.ToString(), font, i == activeDay ? b1.FillPressColor : color, new Rectangle(left, top + 30 * SizeMultiple, width, height), ContentAlignment.MiddleCenter);
                 }
 
                 if (!maxDrawer && days[i].Date.Equals(DateTime.MaxValue.Date))
@@ -1361,9 +1298,9 @@ namespace Sunny.UI
             {
                 using Font SubFont = this.Font.DPIScaleFont(SizeMultiple == 1 ? 10.5f : 15.75f);
                 e.Graphics.FillRectangle(p3.FillColor, p3.Width - width * 4 + 1, p3.Height - height + 1, width * 4 - 2, height - 2);
-                e.Graphics.DrawString(UIStyles.CurrentResources.Today + "  " + DateTime.Now.DateString(), SubFont, isToday ? b3.SymbolColor : Color.DarkGray, new Rectangle(p3.Width - width * 4, p3.Height - height - 1, Width, height), ContentAlignment.MiddleLeft);
+                e.Graphics.DrawString(UIStyles.CurrentResources.Today + "  " + DateTime.Now.DateString(), SubFont, isToday ? b1.FillPressColor : Color.DarkGray, new Rectangle(p3.Width - width * 4, p3.Height - height - 1, Width, height), ContentAlignment.MiddleLeft);
                 SizeF sf = TextRenderer.MeasureText(UIStyles.CurrentResources.Today, SubFont);
-                e.Graphics.DrawRectangle(b3.SymbolColor, new Rectangle(p3.Width - width * 4 + 1, p3.Height - height + 1, (int)sf.Width - 2, height - 4));
+                e.Graphics.DrawRectangle(b1.FillPressColor, new Rectangle(p3.Width - width * 4 + 1, p3.Height - height + 1, (int)sf.Width - 2, height - 4));
             }
         }
 

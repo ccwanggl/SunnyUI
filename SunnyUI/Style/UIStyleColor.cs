@@ -481,7 +481,7 @@ namespace Sunny.UI
 
             //TrackBar
             TrackBarFillColor = PrimaryColor;
-            TrackBarForeColor = ForeColor;
+            TrackBarForeColor = UIColor.Blue;
             TrackBarRectColor = UIColor.Blue;
             TrackDisableColor = RectColor;
 

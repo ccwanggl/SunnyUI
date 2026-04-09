@@ -49,6 +49,7 @@
             // 
             // processBar
             // 
+            processBar.BackColor = System.Drawing.Color.Transparent;
             processBar.FillColor = System.Drawing.Color.FromArgb(235, 243, 255);
             processBar.Font = new System.Drawing.Font("宋体", 12F);
             processBar.Location = new System.Drawing.Point(32, 91);

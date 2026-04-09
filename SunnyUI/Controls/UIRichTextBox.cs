@@ -321,7 +321,7 @@ namespace Sunny.UI
         {
             base.SetStyleColor(uiColor);
             fillColor = uiColor.EditorBackColor;
-            foreColor = UIFontColor.Primary;
+            foreColor = uiColor.EditorForeColor;
             edit.BackColor = GetFillColor();
             edit.ForeColor = GetForeColor();
 
@@ -514,9 +514,9 @@ namespace Sunny.UI
             edit = new RichTextBox();
             bar = new UIScrollBar();
             SuspendLayout();
-            // 
+            //
             // edit
-            // 
+            //
             edit.BorderStyle = BorderStyle.None;
             edit.Dock = DockStyle.Fill;
             edit.Location = new Point(2, 2);
@@ -524,9 +524,9 @@ namespace Sunny.UI
             edit.Size = new Size(266, 176);
             edit.TabIndex = 0;
             edit.Text = "";
-            // 
+            //
             // bar
-            // 
+            //
             bar.Font = new Font("宋体", 12F);
             bar.Location = new Point(247, 4);
             bar.MinimumSize = new Size(1, 1);
@@ -534,9 +534,9 @@ namespace Sunny.UI
             bar.Size = new Size(19, 173);
             bar.TabIndex = 2;
             bar.Text = "uiScrollBar1";
-            // 
+            //
             // UIRichTextBox
-            // 
+            //
             Controls.Add(bar);
             Controls.Add(edit);
             FillColor = Color.White;

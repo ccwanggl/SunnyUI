@@ -137,11 +137,17 @@ namespace Sunny.UI
         {
             Color[] colors = Color.White.GradientColors(TitleColor, 16);
             Color = colors[2];
-            if (Style == UIStyle.Inherited && (UIStyles.Style == UIStyle.DarkBlue || UIStyles.Style == UIStyle.Black))
+            if (Style == UIStyle.Inherited)
             {
-                Color[] colors1 = UIStyles.ActiveStyleColor.PrimaryColor.GradientColors(Color.Black, 16);
-                Color = colors1[2];
-                foreColor = Color.White;
+                if (UIStyles.Style == UIStyle.DarkBlue || UIStyles.Style == UIStyle.Black ||
+                    UIStyles.Style == UIStyle.Dark)
+                {
+                    Color[] colors1 = UIStyles.ActiveStyleColor.PrimaryColor.GradientColors(Color.Black, 16);
+                    Color = colors1[2];
+                    foreColor = Color.White;
+
+                    if (SymbolColor == UIStyles.Dark.ButtonFillColor) SymbolColor = UIStyles.Blue.ButtonFillColor;
+                }
             }
 
             // 使用TextRenderer测量文本

@@ -68,6 +68,7 @@
             // 
             // edtUser
             // 
+            edtUser.BackColor = System.Drawing.Color.Transparent;
             edtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             edtUser.EnterAsTab = true;
             edtUser.Font = new System.Drawing.Font("宋体", 12F);
@@ -86,6 +87,7 @@
             // 
             // edtPassword
             // 
+            edtPassword.BackColor = System.Drawing.Color.Transparent;
             edtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             edtPassword.Font = new System.Drawing.Font("宋体", 12F);
             edtPassword.Location = new System.Drawing.Point(4, 162);
@@ -105,6 +107,7 @@
             // 
             // btnLogin
             // 
+            btnLogin.BackColor = System.Drawing.Color.Transparent;
             btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             btnLogin.Font = new System.Drawing.Font("宋体", 12F);
             btnLogin.Location = new System.Drawing.Point(4, 206);
@@ -120,6 +123,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.BackColor = System.Drawing.Color.Transparent;
             btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             btnCancel.FillColor = System.Drawing.Color.FromArgb(230, 80, 80);
             btnCancel.FillColor2 = System.Drawing.Color.FromArgb(230, 80, 80);

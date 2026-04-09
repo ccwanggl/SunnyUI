@@ -289,25 +289,25 @@ namespace Sunny.UI
         private void InitializeComponent()
         {
             SuspendLayout();
-            // 
+            //
             // edit
-            // 
+            //
             edit.Leave += edit_Leave;
-            // 
+            //
             // UINumPadTextBox
-            // 
+            //
             Name = "UINumPadTextBox";
             ButtonClick += UIKeyBoardTextBox_ButtonClick;
             ResumeLayout(false);
             PerformLayout();
         }
 
-        /// <summary> 
+        /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>

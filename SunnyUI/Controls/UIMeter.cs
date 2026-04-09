@@ -195,8 +195,8 @@ public class UIMeter : UIUserControl
     public override void SetStyleColor(UIBaseStyle uiColor)
     {
         base.SetStyleColor(uiColor);
-        ArcColor = uiColor.ButtonFillColor;
-        NeedleColor = uiColor.ButtonFillColor;
+        ArcColor = uiColor.ProcessColor;
+        NeedleColor = uiColor.ProcessColor;
     }
 
     private readonly List<Scope> _scopes = [];

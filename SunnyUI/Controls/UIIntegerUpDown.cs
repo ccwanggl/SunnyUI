@@ -857,7 +857,7 @@ namespace Sunny.UI
             base.SetStyleColor(uiColor);
 
             fillColor = uiColor.EditorBackColor;
-            foreColor = UIFontColor.Primary;
+            foreColor = uiColor.EditorForeColor;
             rectColor = uiColor.ButtonRectColor;
 
             _rectHoverColor = uiColor.ButtonRectHoverColor;

@@ -88,6 +88,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton1
             // 
+            uiSymbolButton1.BackColor = Color.Transparent;
             uiSymbolButton1.Font = new Font("宋体", 12F);
             uiSymbolButton1.Location = new Point(245, 13);
             uiSymbolButton1.MinimumSize = new Size(1, 1);
@@ -105,6 +106,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton2
             // 
+            uiSymbolButton2.BackColor = Color.Transparent;
             uiSymbolButton2.Font = new Font("宋体", 12F);
             uiSymbolButton2.Location = new Point(245, 58);
             uiSymbolButton2.MinimumSize = new Size(1, 1);
@@ -118,6 +120,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton3
             // 
+            uiSymbolButton3.BackColor = Color.Transparent;
             uiSymbolButton3.Font = new Font("宋体", 12F);
             uiSymbolButton3.Location = new Point(245, 103);
             uiSymbolButton3.MinimumSize = new Size(1, 1);
@@ -131,6 +134,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton4
             // 
+            uiSymbolButton4.BackColor = Color.Transparent;
             uiSymbolButton4.Font = new Font("宋体", 12F);
             uiSymbolButton4.Location = new Point(168, 148);
             uiSymbolButton4.MinimumSize = new Size(1, 1);
@@ -145,6 +149,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton6
             // 
+            uiSymbolButton6.BackColor = Color.Transparent;
             uiSymbolButton6.Font = new Font("宋体", 12F);
             uiSymbolButton6.Location = new Point(168, 103);
             uiSymbolButton6.MinimumSize = new Size(1, 1);
@@ -159,6 +164,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton7
             // 
+            uiSymbolButton7.BackColor = Color.Transparent;
             uiSymbolButton7.Font = new Font("宋体", 12F);
             uiSymbolButton7.Location = new Point(168, 58);
             uiSymbolButton7.MinimumSize = new Size(1, 1);
@@ -173,6 +179,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton8
             // 
+            uiSymbolButton8.BackColor = Color.Transparent;
             uiSymbolButton8.Font = new Font("宋体", 12F);
             uiSymbolButton8.Location = new Point(168, 13);
             uiSymbolButton8.MinimumSize = new Size(1, 1);
@@ -188,6 +195,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton9
             // 
+            uiSymbolButton9.BackColor = Color.Transparent;
             uiSymbolButton9.Font = new Font("宋体", 12F);
             uiSymbolButton9.Location = new Point(91, 148);
             uiSymbolButton9.MinimumSize = new Size(1, 1);
@@ -202,6 +210,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton10
             // 
+            uiSymbolButton10.BackColor = Color.Transparent;
             uiSymbolButton10.Font = new Font("宋体", 12F);
             uiSymbolButton10.Location = new Point(91, 103);
             uiSymbolButton10.MinimumSize = new Size(1, 1);
@@ -216,6 +225,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton11
             // 
+            uiSymbolButton11.BackColor = Color.Transparent;
             uiSymbolButton11.Font = new Font("宋体", 12F);
             uiSymbolButton11.Location = new Point(91, 58);
             uiSymbolButton11.MinimumSize = new Size(1, 1);
@@ -230,6 +240,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton12
             // 
+            uiSymbolButton12.BackColor = Color.Transparent;
             uiSymbolButton12.Font = new Font("宋体", 12F);
             uiSymbolButton12.Location = new Point(91, 13);
             uiSymbolButton12.MinimumSize = new Size(1, 1);
@@ -245,6 +256,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton13
             // 
+            uiSymbolButton13.BackColor = Color.Transparent;
             uiSymbolButton13.Font = new Font("宋体", 12F);
             uiSymbolButton13.Location = new Point(14, 148);
             uiSymbolButton13.MinimumSize = new Size(1, 1);
@@ -259,6 +271,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton14
             // 
+            uiSymbolButton14.BackColor = Color.Transparent;
             uiSymbolButton14.Font = new Font("宋体", 12F);
             uiSymbolButton14.Location = new Point(14, 103);
             uiSymbolButton14.MinimumSize = new Size(1, 1);
@@ -273,6 +286,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton15
             // 
+            uiSymbolButton15.BackColor = Color.Transparent;
             uiSymbolButton15.Font = new Font("宋体", 12F);
             uiSymbolButton15.Location = new Point(14, 58);
             uiSymbolButton15.MinimumSize = new Size(1, 1);
@@ -287,6 +301,7 @@ namespace Sunny.UI
             // 
             // uiSymbolButton16
             // 
+            uiSymbolButton16.BackColor = Color.Transparent;
             uiSymbolButton16.Font = new Font("宋体", 12F);
             uiSymbolButton16.Location = new Point(14, 13);
             uiSymbolButton16.MinimumSize = new Size(1, 1);
@@ -358,9 +373,9 @@ namespace Sunny.UI
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
-            fillColor = Color.White;
-            foreColor = uiColor.DropDownPanelForeColor;
-            RectColor = uiColor.RectColor;
+            //fillColor = Color.White;
+            //foreColor = uiColor.DropDownPanelForeColor;
+            //RectColor = uiColor.RectColor;
 
             foreach (var item in this.GetControls<UISymbolButton>(true))
             {

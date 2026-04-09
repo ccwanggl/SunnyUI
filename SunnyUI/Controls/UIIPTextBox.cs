@@ -63,6 +63,7 @@ namespace Sunny.UI
             }
 
             fillColor = UIStyles.Blue.EditorBackColor;
+            foreColor = UIStyles.Blue.EditorForeColor;
         }
 
         private void Txt_KeyDown(object sender, KeyEventArgs e)
@@ -294,29 +295,29 @@ namespace Sunny.UI
             base.SetStyleColor(uiColor);
 
             fillColor = uiColor.EditorBackColor;
-            foreColor = UIFontColor.Primary;
+            foreColor = uiColor.EditorForeColor;
 
             txt1.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt1.ForeColor = UIFontColor.Primary;
+            txt1.ForeColor = foreColor;
             txt2.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt2.ForeColor = UIFontColor.Primary;
+            txt2.ForeColor = foreColor;
             txt3.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt3.ForeColor = UIFontColor.Primary;
+            txt3.ForeColor = foreColor;
             txt4.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt4.ForeColor = UIFontColor.Primary;
+            txt4.ForeColor = foreColor;
         }
 
         protected override void OnEnabledChanged(EventArgs e)
         {
             base.OnEnabledChanged(e);
             txt1.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt1.ForeColor = UIFontColor.Primary;
+            txt1.ForeColor = foreColor;
             txt2.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt2.ForeColor = UIFontColor.Primary;
+            txt2.ForeColor = foreColor;
             txt3.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt3.ForeColor = UIFontColor.Primary;
+            txt3.ForeColor = foreColor;
             txt4.BackColor = Enabled ? fillColor : FillDisableColor;
-            txt4.ForeColor = UIFontColor.Primary;
+            txt4.ForeColor = foreColor;
         }
 
         /// <summary>
@@ -391,9 +392,9 @@ namespace Sunny.UI
             txt3 = new TextBox();
             txt4 = new TextBox();
             SuspendLayout();
-            // 
+            //
             // txt1
-            // 
+            //
             txt1.BackColor = Color.White;
             txt1.BorderStyle = BorderStyle.None;
             txt1.ImeMode = ImeMode.Disable;
@@ -404,9 +405,9 @@ namespace Sunny.UI
             txt1.Size = new Size(40, 19);
             txt1.TabIndex = 0;
             txt1.TextAlign = HorizontalAlignment.Center;
-            // 
+            //
             // txt2
-            // 
+            //
             txt2.BackColor = Color.White;
             txt2.BorderStyle = BorderStyle.None;
             txt2.ImeMode = ImeMode.Disable;
@@ -418,9 +419,9 @@ namespace Sunny.UI
             txt2.TabIndex = 0;
             txt2.TabStop = false;
             txt2.TextAlign = HorizontalAlignment.Center;
-            // 
+            //
             // txt3
-            // 
+            //
             txt3.BackColor = Color.White;
             txt3.BorderStyle = BorderStyle.None;
             txt3.ImeMode = ImeMode.Disable;
@@ -432,9 +433,9 @@ namespace Sunny.UI
             txt3.TabIndex = 0;
             txt3.TabStop = false;
             txt3.TextAlign = HorizontalAlignment.Center;
-            // 
+            //
             // txt4
-            // 
+            //
             txt4.BackColor = Color.White;
             txt4.BorderStyle = BorderStyle.None;
             txt4.ImeMode = ImeMode.Disable;
@@ -446,9 +447,9 @@ namespace Sunny.UI
             txt4.TabIndex = 0;
             txt4.TabStop = false;
             txt4.TextAlign = HorizontalAlignment.Center;
-            // 
+            //
             // UIIPTextBox
-            // 
+            //
             AutoScaleMode = AutoScaleMode.None;
             Controls.Add(txt4);
             Controls.Add(txt3);

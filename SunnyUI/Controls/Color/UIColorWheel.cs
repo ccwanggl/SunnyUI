@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Sunny.UI
 {
-#pragma warning disable CS1591 // È±ÉÙ¶Ô¹«¹²¿É¼ûÀàĞÍ»ò³ÉÔ±µÄ XML ×¢ÊÍ
+#pragma warning disable CS1591 // ç¼ºå°‘å¯¹å…¬å…±å¯è§ç±»å‹æˆ–æˆå‘˜çš„ XML æ³¨é‡Š
     [ToolboxItem(false)]
     public sealed class UIColorWheel : Control, IStyleInterface, IZoomScale
     {
@@ -41,21 +41,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ½ûÖ¹¿Ø¼ş¸úËæ´°ÌåËõ·Å
+        /// ç¦æ­¢æ§ä»¶è·Ÿéšçª—ä½“ç¼©æ”¾
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("½ûÖ¹¿Ø¼ş¸úËæ´°ÌåËõ·Å")]
+        [DefaultValue(false), Category("SunnyUI"), Description("ç¦æ­¢æ§ä»¶è·Ÿéšçª—ä½“ç¼©æ”¾")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// ¿Ø¼şËõ·ÅÇ°ÔÚÆäÈİÆ÷ÀïµÄÎ»ÖÃ
+        /// æ§ä»¶ç¼©æ”¾å‰åœ¨å…¶å®¹å™¨é‡Œçš„ä½ç½®
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// ÉèÖÃ¿Ø¼şËõ·Å±ÈÀı
+        /// è®¾ç½®æ§ä»¶ç¼©æ”¾æ¯”ä¾‹
         /// </summary>
-        /// <param name="scale">Ëõ·Å±ÈÀı</param>
+        /// <param name="scale">ç¼©æ”¾æ¯”ä¾‹</param>
         public void SetZoomScale(float scale)
         {
 
@@ -121,9 +121,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ÖØÔØ»æÍ¼
+        /// é‡è½½ç»˜å›¾
         /// </summary>
-        /// <param name="e">»æÍ¼²ÎÊı</param>
+        /// <param name="e">ç»˜å›¾å‚æ•°</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (Width != Height)
@@ -131,8 +131,8 @@ namespace Sunny.UI
                 Height = Width;
             }
 
-            using SolidBrush b = new SolidBrush(BackColor);
-            e.Graphics.FillRectangle(b, ClientRectangle);
+            //using SolidBrush b = new SolidBrush(BackColor);
+            //e.Graphics.FillRectangle(b, ClientRectangle);
 
             RectangleF wheelRectangle = WheelRectangle;
             UIColorUtil.DrawFrame(e.Graphics, wheelRectangle, 6, m_frameColor);
@@ -171,9 +171,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ÖØÔØÊó±êÒÆ¶¯ÊÂ¼ş
+        /// é‡è½½é¼ æ ‡ç§»åŠ¨äº‹ä»¶
         /// </summary>
-        /// <param name="e">Êó±ê²ÎÊı</param>
+        /// <param name="e">é¼ æ ‡å‚æ•°</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -183,9 +183,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ÖØÔØÊó±ê°´ÏÂÊÂ¼ş
+        /// é‡è½½é¼ æ ‡æŒ‰ä¸‹äº‹ä»¶
         /// </summary>
-        /// <param name="e">Êó±ê²ÎÊı</param>
+        /// <param name="e">é¼ æ ‡å‚æ•°</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -316,9 +316,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// Ö÷ÌâÑùÊ½
+        /// ä¸»é¢˜æ ·å¼
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("Ö÷ÌâÑùÊ½"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("ä¸»é¢˜æ ·å¼"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -326,9 +326,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ÉèÖÃÖ÷ÌâÑùÊ½
+        /// è®¾ç½®ä¸»é¢˜æ ·å¼
         /// </summary>
-        /// <param name="style">Ö÷ÌâÑùÊ½</param>
+        /// <param name="style">ä¸»é¢˜æ ·å¼</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -347,7 +347,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ÉèÖÃÖ÷ÌâÑùÊ½ÑÕÉ«
+        /// è®¾ç½®ä¸»é¢˜æ ·å¼é¢œè‰²
         /// </summary>
         /// <param name="uiColor"></param>
         public void SetStyleColor(UIBaseStyle uiColor)
@@ -357,21 +357,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// ×Ô¶¨ÒåÖ÷Ìâ·ç¸ñ
+        /// è‡ªå®šä¹‰ä¸»é¢˜é£æ ¼
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("»ñÈ¡»òÉèÖÃ¿ÉÒÔ×Ô¶¨ÒåÖ÷Ìâ·ç¸ñ"), Category("SunnyUI")]
+        [Description("è·å–æˆ–è®¾ç½®å¯ä»¥è‡ªå®šä¹‰ä¸»é¢˜é£æ ¼"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         public string Version { get; }
 
         /// <summary>
-        /// Tag×Ö·û´®
+        /// Tagå­—ç¬¦ä¸²
         /// </summary>
         [DefaultValue(null)]
-        [Description("»ñÈ¡»òÉèÖÃ°üº¬ÓĞ¹Ø¿Ø¼şµÄÊı¾İµÄ¶ÔÏó×Ö·û´®"), Category("SunnyUI")]
+        [Description("è·å–æˆ–è®¾ç½®åŒ…å«æœ‰å…³æ§ä»¶çš„æ•°æ®çš„å¯¹è±¡å­—ç¬¦ä¸²"), Category("SunnyUI")]
         public string TagString { get; set; }
     }
 
-#pragma warning restore CS1591 // È±ÉÙ¶Ô¹«¹²¿É¼ûÀàĞÍ»ò³ÉÔ±µÄ XML ×¢ÊÍ
+#pragma warning restore CS1591 // ç¼ºå°‘å¯¹å…¬å…±å¯è§ç±»å‹æˆ–æˆå‘˜çš„ XML æ³¨é‡Š
 }
