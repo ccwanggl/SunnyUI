@@ -18,6 +18,7 @@
  *
  * 2020-01-01: V2.2.0 增加文件说明
  * 2025-05-27: V3.8.3 修改下拉框自定义颜色
+ * 2026-04-10: V3.9.5 修改下拉框自定义颜色
 ******************************************************************************/
 
 using System;
@@ -41,6 +42,16 @@ namespace Sunny.UI
         /// 列表框
         /// </summary>
         public UIListBox ListBox => listBox;
+
+        /// <summary>
+        /// 设置主题样式
+        /// </summary>
+        /// <param name="uiColor">主题样式</param>
+        public override void SetStyleColor(UIBaseStyle uiColor)
+        {
+            base.SetStyleColor(uiColor);
+            listBox.SetStyleColor(uiColor.DropDownStyle);
+        }
 
         private void ListBox_Click(object sender, EventArgs e)
         {
