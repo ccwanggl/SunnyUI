@@ -47,6 +47,17 @@ namespace Sunny.UI
             BackColor = UIStyles.Blue.ContextMenuColor;
         }
 
+        public UIContextMenuStrip(IContainer container) : base(container)
+        {
+            Font = UIStyles.Font();
+            //RenderMode = ToolStripRenderMode.Custom;
+            Renderer = new UIToolStripRenderer(ColorTable);
+            Version = UIGlobal.Version;
+
+            ColorTable.SetStyleColor(UIStyles.Blue);
+            BackColor = UIStyles.Blue.ContextMenuColor;
+        }
+
         /// <summary>
         /// 禁止控件跟随窗体缩放
         /// </summary>
