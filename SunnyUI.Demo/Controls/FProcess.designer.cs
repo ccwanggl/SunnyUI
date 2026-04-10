@@ -101,7 +101,6 @@ namespace Sunny.UI.Demo
             this.uiRoundProcess2.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundProcess2.DecimalPlaces = 0;
             this.uiRoundProcess2.Font = new System.Drawing.Font("宋体", 12F);
-            this.uiRoundProcess2.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess2.Inner = 0;
             this.uiRoundProcess2.Location = new System.Drawing.Point(133, 167);
             this.uiRoundProcess2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -128,7 +127,6 @@ namespace Sunny.UI.Demo
             // 
             this.uiRoundProcess1.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundProcess1.Font = new System.Drawing.Font("宋体", 12F);
-            this.uiRoundProcess1.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess1.Inner = 35;
             this.uiRoundProcess1.Location = new System.Drawing.Point(15, 167);
             this.uiRoundProcess1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -270,7 +268,6 @@ namespace Sunny.UI.Demo
             this.uiRoundProcess3.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundProcess3.DecimalPlaces = 0;
             this.uiRoundProcess3.Font = new System.Drawing.Font("宋体", 12F);
-            this.uiRoundProcess3.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess3.Inner = 35;
             this.uiRoundProcess3.Location = new System.Drawing.Point(251, 167);
             this.uiRoundProcess3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -288,7 +285,6 @@ namespace Sunny.UI.Demo
             this.uiRoundProcess4.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundProcess4.DecimalPlaces = 0;
             this.uiRoundProcess4.Font = new System.Drawing.Font("宋体", 12F);
-            this.uiRoundProcess4.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess4.Inner = 35;
             this.uiRoundProcess4.Location = new System.Drawing.Point(369, 167);
             this.uiRoundProcess4.MinimumSize = new System.Drawing.Size(1, 1);
