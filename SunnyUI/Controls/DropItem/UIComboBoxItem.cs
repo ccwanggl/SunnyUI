@@ -50,7 +50,7 @@ namespace Sunny.UI
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
-            listBox.SetStyleColor(uiColor.DropDownStyle);
+            listBox.SetStyleColor(uiColor);
         }
 
         private void ListBox_Click(object sender, EventArgs e)
