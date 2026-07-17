@@ -41,6 +41,7 @@
  * 2025-04-17: V3.8.3 修复不可关闭的主页被关闭了 #IC1XIU
  * 2025-04-21: V3.8.3 更新部分注释
  * 2025-06-12: V3.8.4 修复Close按钮点击无法关闭标签 #ICEIHR
+ * 2026-07-17: V3.9.7 修复设置 Alignment 为 Bottom 时，关闭按钮不可见 #IK1S7M
  ******************************************************************************/
 
 using Sunny.UI.Win32;
@@ -741,7 +742,7 @@ namespace Sunny.UI
                             color = tabSelectedForeColor;
                         }
 
-                        e.Graphics.DrawFontImage(77, 28, color, new Rectangle(TabRect.Left + TabRect.Width - 28, 0, 24, TabRect.Height));
+                        e.Graphics.DrawFontImage(77, 28, color, new Rectangle(TabRect.Left + TabRect.Width - 28, TabRect.Top, 24, TabRect.Height));
                     }
                 }
 
@@ -803,7 +804,7 @@ namespace Sunny.UI
                 for (int index = 0; index <= TabCount - 1; index++)
                 {
                     Rectangle TabRect = new Rectangle(GetTabRect(index).Location.X - 2, GetTabRect(index).Location.Y - 2, ItemSize.Width, ItemSize.Height);
-                    Rectangle closeRect = new Rectangle(TabRect.Right - 28, 0, 28, TabRect.Height);
+                    Rectangle closeRect = new Rectangle(TabRect.Right - 28, TabRect.Top, 28, TabRect.Height);
                     bool inrect = e.Location.InRect(closeRect);
                     if (!CloseRects.ContainsKey(index))
                         CloseRects.TryAdd(index, false);
@@ -828,6 +829,10 @@ namespace Sunny.UI
             for (int index = 0; index <= TabCount - 1; index++)
             {
                 Rectangle TabRect = new Rectangle(GetTabRect(index).Location.X - 2, GetTabRect(index).Location.Y - 2, ItemSize.Width, ItemSize.Height);
+                if (Alignment == TabAlignment.Bottom)
+                {
+                    TabRect = new Rectangle(GetTabRect(index).Location.X - 2, GetTabRect(index).Location.Y + 2, ItemSize.Width, ItemSize.Height);
+                }
                 Rectangle rect = new Rectangle(TabRect.Right - 28, TabRect.Top, 24, TabRect.Height);
                 if (e.Location.InRect(rect))
                 {
